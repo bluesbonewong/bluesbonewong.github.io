@@ -111,18 +111,18 @@
 
 
 
-<meta name="description" content="第一个问题：如何知道用户在画画呢？ 以鼠标为例，我们只要知道什么时候按下去，什么时候动，什么时候松开就可以判断出用户是否在画画 使用onmousedown判断什么时候按下去 使用onmousemove判断什么时候动 使用onmouseup判断什么时候松开">
+<meta name="description" content="看起来和  元素很相像 Canvas 的默认大小为300像素×150像素 请使用使用HTML的width和height属性为明确规定宽高，而不是使用CSS  1&amp;lt;canvas id=&quot;tutorial&quot; width=&quot;150&quot; height=&quot;150&quot;&amp;gt;&amp;lt;/canvas&amp;gt; 为了在 Canvas 上绘制图形，我们使用一个JavaScript上下文对象，它能动态创建图像（">
 <meta name="keywords" content="Canvas,HTML5">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Canvas学习笔记(一)">
+<meta property="og:title" content="Canvas(一)">
 <meta property="og:url" content="http://yoursite.com/2018/04/25/Canvas学习笔记(一)/index.html">
 <meta property="og:site_name" content="BluesboneW">
-<meta property="og:description" content="第一个问题：如何知道用户在画画呢？ 以鼠标为例，我们只要知道什么时候按下去，什么时候动，什么时候松开就可以判断出用户是否在画画 使用onmousedown判断什么时候按下去 使用onmousemove判断什么时候动 使用onmouseup判断什么时候松开">
+<meta property="og:description" content="看起来和  元素很相像 Canvas 的默认大小为300像素×150像素 请使用使用HTML的width和height属性为明确规定宽高，而不是使用CSS  1&amp;lt;canvas id=&quot;tutorial&quot; width=&quot;150&quot; height=&quot;150&quot;&amp;gt;&amp;lt;/canvas&amp;gt; 为了在 Canvas 上绘制图形，我们使用一个JavaScript上下文对象，它能动态创建图像（">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-26T13:21:56.251Z">
+<meta property="og:updated_time" content="2018-04-27T18:32:24.358Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Canvas学习笔记(一)">
-<meta name="twitter:description" content="第一个问题：如何知道用户在画画呢？ 以鼠标为例，我们只要知道什么时候按下去，什么时候动，什么时候松开就可以判断出用户是否在画画 使用onmousedown判断什么时候按下去 使用onmousemove判断什么时候动 使用onmouseup判断什么时候松开">
+<meta name="twitter:title" content="Canvas(一)">
+<meta name="twitter:description" content="看起来和  元素很相像 Canvas 的默认大小为300像素×150像素 请使用使用HTML的width和height属性为明确规定宽高，而不是使用CSS  1&amp;lt;canvas id=&quot;tutorial&quot; width=&quot;150&quot; height=&quot;150&quot;&amp;gt;&amp;lt;/canvas&amp;gt; 为了在 Canvas 上绘制图形，我们使用一个JavaScript上下文对象，它能动态创建图像（">
 
 
 
@@ -158,7 +158,7 @@
 
 
 
-  <title>Canvas学习笔记(一) | BluesboneW</title>
+  <title>Canvas(一) | BluesboneW</title>
   
 
 
@@ -302,7 +302,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Canvas学习笔记(一)</h1>
+          <h1 class="post-title" itemprop="name headline">Canvas(一)</h1>
         
 
         <div class="post-meta">
@@ -374,12 +374,22 @@
       
 
       
-        <h2 id="第一个问题如何知道用户在画画呢"><a class="markdownIt-Anchor" href="#第一个问题如何知道用户在画画呢"></a> 第一个问题：如何知道用户在画画呢？</h2>
+        <ol>
+<li><canvas> 看起来和 <img> 元素很相像<br>
+Canvas 的默认大小为300像素×150像素<br>
+请使用使用HTML的width和height属性为<canvas>明确规定宽高，而不是使用CSS</canvas></canvas></li>
+</ol>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">canvas</span> <span class="attr">id</span>=<span class="string">"tutorial"</span> <span class="attr">width</span>=<span class="string">"150"</span> <span class="attr">height</span>=<span class="string">"150"</span>&gt;</span><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>为了在 Canvas 上绘制图形，我们使用一个JavaScript上下文对象，它能动态创建图像（ creates graphics on the fly）<br>
+getContext() 的方法是用来获得渲染上下文和它的绘画功能，getContext()只有一个参数——上下文的格式</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> canvas = <span class="built_in">document</span>.getElementById(<span class="string">'tutorial'</span>)</span><br><span class="line"><span class="keyword">var</span> ctx = canvas.getContext(<span class="string">'2d'</span>)</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h2 id="第一个问题如何知道用户在画画呢"><a class="markdownIt-Anchor" href="#第一个问题如何知道用户在画画呢"></a> 第一个问题：如何知道用户在画画呢？</h2>
 <p>以鼠标为例，我们只要知道<code>什么时候按下去</code>，<code>什么时候动</code>，<code>什么时候松开</code>就可以判断出用户是否在画画</p>
 <p>使用<code>onmousedown</code>判断什么时候按下去<br>
 使用<code>onmousemove</code>判断什么时候动<br>
 使用<code>onmouseup</code>判断什么时候松开</p>
-<a id="more"></a>
+<!-- more -->
 <blockquote>
 <p>我们先用JavaScript模拟出Canvas的效果</p>
 </blockquote>
@@ -425,8 +435,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/04/26/前端面试每日一题【不断更新中。。。】/" rel="prev" title="前端面试每日一题【不断更新中。。。】">
-                前端面试每日一题【不断更新中。。。】 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/04/26/前端面试每日一题【不断更新中。。。】/" rel="prev" title="前端面试每日一题【更新至第三天】">
+                前端面试每日一题【更新至第三天】 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>

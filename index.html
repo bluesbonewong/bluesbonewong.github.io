@@ -451,7 +451,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/04/26/前端面试每日一题【不断更新中。。。】/" itemprop="url">前端面试每日一题【不断更新中。。。】</a></h1>
+                <a class="post-title-link" href="/2018/04/26/前端面试每日一题【不断更新中。。。】/" itemprop="url">前端面试每日一题【更新至第三天】</a></h1>
         
 
         <div class="post-meta">
@@ -602,7 +602,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/04/25/Canvas学习笔记(一)/" itemprop="url">Canvas学习笔记(一)</a></h1>
+                <a class="post-title-link" href="/2018/04/25/Canvas学习笔记(一)/" itemprop="url">Canvas(一)</a></h1>
         
 
         <div class="post-meta">
@@ -675,11 +675,15 @@
 
       
         
-          <h2 id="第一个问题如何知道用户在画画呢"><a class="markdownIt-Anchor" href="#第一个问题如何知道用户在画画呢"></a> 第一个问题：如何知道用户在画画呢？</h2>
-<p>以鼠标为例，我们只要知道<code>什么时候按下去</code>，<code>什么时候动</code>，<code>什么时候松开</code>就可以判断出用户是否在画画</p>
-<p>使用<code>onmousedown</code>判断什么时候按下去<br>
-使用<code>onmousemove</code>判断什么时候动<br>
-使用<code>onmouseup</code>判断什么时候松开</p>
+          <ol>
+<li><canvas> 看起来和 <img> 元素很相像<br>
+Canvas 的默认大小为300像素×150像素<br>
+请使用使用HTML的width和height属性为<canvas>明确规定宽高，而不是使用CSS</canvas></canvas></li>
+</ol>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">canvas</span> <span class="attr">id</span>=<span class="string">"tutorial"</span> <span class="attr">width</span>=<span class="string">"150"</span> <span class="attr">height</span>=<span class="string">"150"</span>&gt;</span><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>为了在 Canvas 上绘制图形，我们使用一个JavaScript上下文对象，它能动态创建图像（ creates graphics on the fly）<br>
+getContext() 的方法是用来获得渲染上下文和它的绘画功能，getContext()只有一个参数——上下文的格式</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> canvas = <span class="built_in">document</span>.getElementById(<span class="string">'tutorial'</span>)</span><br><span class="line"><span class="keyword">var</span> ctx = canvas.getContext(<span class="string">'2d'</span>)</span><br></pre></td></tr></table></figure>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/04/25/Canvas学习笔记(一)/#more" rel="contents">
