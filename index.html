@@ -312,7 +312,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-01T22:26:48+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-01T22:32:12+08:00">
                 2018-05-01
               </time>
             
@@ -373,16 +373,16 @@
 
       
         
-          
-          
-其实官方文档对这个已经说的很清楚了，笔者不过是在其基础上进行归纳总结，各位看官还是先去读一下官方文档吧
-
-1.computed区别于method的两个核心
-在官方文档中，强调了computed区别于method最重要的两点
-
-computed是属性调用，而methods是函数调用
-computed
-          ...
+          <blockquote>
+<p>其实官方文档对这个已经说的很清楚了，笔者不过是在其基础上进行归纳总结，各位看官还是先去<a href="https://cn.vuejs.org/v2/guide/computed.html#%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7%E7%BC%93%E5%AD%98-vs-%E6%96%B9%E6%B3%95" target="_blank" rel="noopener">读一下官方文档</a>吧</p>
+</blockquote>
+<h2 id="1computed区别于method的两个核心"><a class="markdownIt-Anchor" href="#1computed区别于method的两个核心"></a> 1.computed区别于method的两个核心</h2>
+<p>在官方文档中，强调了computed区别于method最重要的两点</p>
+<ol>
+<li>computed是<strong>属性调用</strong>，而methods是<strong>函数调用</strong></li>
+<li>computed带有<strong>缓存功能</strong>，而methods不是</li>
+</ol>
+<p>OK，下面我们看一个具体的例子</p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/05/01/浅析Vue中computed与method的区别/#more" rel="contents">
@@ -528,14 +528,11 @@ computed
 
       
         
-          
-          
-target是被点击到的最里面的子元素，currentTarget是被监听的元素
-
-直接看代码，并自己测试
-http://js.jirengu.com/xegab/1/edit?html,css,js,output
-
-          
+          <blockquote>
+<p><code>target</code>是被点击到的最里面的子元素，<code>currentTarget</code>是被监听的元素</p>
+</blockquote>
+<p>直接看代码，并自己测试<br>
+<a href="http://js.jirengu.com/xegab/1/edit?html,css,js,output" target="_blank" rel="noopener">http://js.jirengu.com/xegab/1/edit?html,css,js,output</a></p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/04/30/e-target和e-currentTarget到底有什么不同/#more" rel="contents">
@@ -681,18 +678,10 @@ http://js.jirengu.com/xegab/1/edit?html,css,js,output
 
       
         
-          
-          1.媒体查询
-1.1什么是媒体
-这个概念非常重要
-纸张，电脑，iPad，手机都是媒体，我们通过媒体查询可以获知用户在什么设备，从而写出针对性的css
-&lt;!-- more --&gt;
-1.2具体用法
-
-基础用法
-
-1234567891011121314151617181920212223242
-          ...
+          <h1 id="1媒体查询"><a class="markdownIt-Anchor" href="#1媒体查询"></a> 1.媒体查询</h1>
+<h2 id="11什么是媒体"><a class="markdownIt-Anchor" href="#11什么是媒体"></a> 1.1什么是媒体</h2>
+<p>这个概念非常重要<br>
+<strong>纸张</strong>，<strong>电脑</strong>，<strong>iPad</strong>，<strong>手机</strong>都是媒体，我们通过媒体查询可以获知用户在什么设备，从而写出针对性的css</p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/04/29/移动端入门/#more" rel="contents">
@@ -838,13 +827,12 @@ http://js.jirengu.com/xegab/1/edit?html,css,js,output
 
       
         
-          
-          1.库与框架的区别
-1.1下面，我们先看一个todolist用jQuery和Vue实现的过程
-
-jQuery是一个DOM操作库，其核心就是通过JavaScript大量地操作了DOM结构
-1234567&lt;div&gt;  &lt;input type="text" name="" id="txt
-          ...
+          <h1 id="1库与框架的区别"><a class="markdownIt-Anchor" href="#1库与框架的区别"></a> 1.库与框架的区别</h1>
+<h2 id="11下面我们先看一个todolist用jquery和vue实现的过程"><a class="markdownIt-Anchor" href="#11下面我们先看一个todolist用jquery和vue实现的过程"></a> 1.1下面，我们先看一个<code>todolist</code>用jQuery和Vue实现的过程</h2>
+<blockquote>
+<p>jQuery是一个DOM操作库，其核心就是通过JavaScript大量地操作了DOM结构</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">id</span>=<span class="string">"txt-title"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"btn-submit"</span>&gt;</span>submit<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">"ul-list"</span>&gt;</span><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/04/27/深入浅出vue系列(一)从jQuery到MVVM/#more" rel="contents">
@@ -1142,11 +1130,12 @@ jQuery是一个DOM操作库，其核心就是通过JavaScript大量地操作了D
       
         
           
-          &lt;!-- more --&gt;
-canvas基础知识梗概
+          
+ canvas基础知识梗概
 以鼠标为例，我们只要知道什么时候按下去，什么时候动，什么时候松开就可以判断出用户是否在画画
 使用onmousedown判断什么时候按下去
-使用onmousemove判断什么时候动 —— 有bug，移动速度过快会跟不上[用canvas的
+使用onmousemove判断什么时候动 —— 有bug，移动速度过快会跟不上[用canvas的两点之间连线]
+使用onmouseu
           ...
           <!--noindex-->
           <div class="post-button text-center">
