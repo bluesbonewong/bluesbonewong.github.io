@@ -100,7 +100,7 @@
 
 
 
-  <meta name="keywords" content="Vue,computed," />
+  <meta name="keywords" content="移动端," />
 
 
 
@@ -111,20 +111,18 @@
 
 
 
-<meta name="description" content="其实官方文档对这个已经说的很清楚了，笔者不过是在其基础上进行归纳总结，各位看官还是先去读一下官方文档吧  1.computed区别于method的两个核心 在官方文档中，强调了computed区别于method最重要的两点  computed是属性调用，而methods是函数调用 computed带有缓存功能，而methods不是 OK，下面我们看一个具体的例子 &amp;lt;!-- more --&amp;">
-<meta name="keywords" content="Vue,computed">
+<meta name="description" content="1.媒体查询  1.1什么是媒体 这个概念非常重要 纸张，电脑，iPad，手机都是媒体，我们通过媒体查询可以获知用户在什么设备，从而写出针对性的css  1.2具体用法  基础用法  123456789101112131415161718192021222324252627@media (min-width: 800px) &amp;#123;  /*如果某个媒体满足宽度800px之上，那么css如下*">
+<meta name="keywords" content="移动端">
 <meta property="og:type" content="article">
-<meta property="og:title" content="浅析Vue中computed与method的区别">
-<meta property="og:url" content="http://yoursite.com/2018/04/25/浅析Vue中computed与method的区别/index.html">
+<meta property="og:title" content="移动端入门(响应式)">
+<meta property="og:url" content="http://yoursite.com/2018/04/29/移动端入门/index.html">
 <meta property="og:site_name" content="BluesboneW">
-<meta property="og:description" content="其实官方文档对这个已经说的很清楚了，笔者不过是在其基础上进行归纳总结，各位看官还是先去读一下官方文档吧  1.computed区别于method的两个核心 在官方文档中，强调了computed区别于method最重要的两点  computed是属性调用，而methods是函数调用 computed带有缓存功能，而methods不是 OK，下面我们看一个具体的例子 &amp;lt;!-- more --&amp;">
+<meta property="og:description" content="1.媒体查询  1.1什么是媒体 这个概念非常重要 纸张，电脑，iPad，手机都是媒体，我们通过媒体查询可以获知用户在什么设备，从而写出针对性的css  1.2具体用法  基础用法  123456789101112131415161718192021222324252627@media (min-width: 800px) &amp;#123;  /*如果某个媒体满足宽度800px之上，那么css如下*">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://segmentfault.com/img/bV8UtL">
-<meta property="og:updated_time" content="2018-04-24T18:13:57.719Z">
+<meta property="og:updated_time" content="2018-05-01T14:14:04.138Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="浅析Vue中computed与method的区别">
-<meta name="twitter:description" content="其实官方文档对这个已经说的很清楚了，笔者不过是在其基础上进行归纳总结，各位看官还是先去读一下官方文档吧  1.computed区别于method的两个核心 在官方文档中，强调了computed区别于method最重要的两点  computed是属性调用，而methods是函数调用 computed带有缓存功能，而methods不是 OK，下面我们看一个具体的例子 &amp;lt;!-- more --&amp;">
-<meta name="twitter:image" content="https://segmentfault.com/img/bV8UtL">
+<meta name="twitter:title" content="移动端入门(响应式)">
+<meta name="twitter:description" content="1.媒体查询  1.1什么是媒体 这个概念非常重要 纸张，电脑，iPad，手机都是媒体，我们通过媒体查询可以获知用户在什么设备，从而写出针对性的css  1.2具体用法  基础用法  123456789101112131415161718192021222324252627@media (min-width: 800px) &amp;#123;  /*如果某个媒体满足宽度800px之上，那么css如下*">
 
 
 
@@ -154,13 +152,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/04/25/浅析Vue中computed与method的区别/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/04/29/移动端入门/"/>
 
 
 
 
 
-  <title>浅析Vue中computed与method的区别 | BluesboneW</title>
+  <title>移动端入门(响应式) | BluesboneW</title>
   
 
 
@@ -287,7 +285,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/25/浅析Vue中computed与method的区别/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/29/移动端入门/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="大汪">
@@ -304,7 +302,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">浅析Vue中computed与method的区别</h1>
+          <h1 class="post-title" itemprop="name headline">移动端入门(响应式)</h1>
         
 
         <div class="post-meta">
@@ -316,8 +314,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-25T02:13:57+08:00">
-                2018-04-25
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-29T20:26:39+08:00">
+                2018-04-29
               </time>
             
 
@@ -339,8 +337,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Vue/" itemprop="url" rel="index">
-                    <span itemprop="name">Vue</span>
+                  <a href="/categories/移动端/" itemprop="url" rel="index">
+                    <span itemprop="name">移动端</span>
                   </a>
                 </span>
 
@@ -376,41 +374,51 @@
       
 
       
-        <blockquote>
-<p>其实官方文档对这个已经说的很清楚了，笔者不过是在其基础上进行归纳总结，各位看官还是先去<a href="https://cn.vuejs.org/v2/guide/computed.html#%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7%E7%BC%93%E5%AD%98-vs-%E6%96%B9%E6%B3%95" target="_blank" rel="noopener">读一下官方文档</a>吧</p>
-</blockquote>
-<h2>1.computed区别于method的两个核心</h2>
-<p>在官方文档中，强调了computed区别于method最重要的两点</p>
-<ol>
-<li>computed是<strong>属性调用</strong>，而methods是<strong>函数调用</strong></li>
-<li>computed带有<strong>缓存功能</strong>，而methods不是
-OK，下面我们看一个具体的例子
-&lt;!-- more --&gt;
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--HTML部分--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">h1</span>&gt;</span>&#123;&#123;message&#125;&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"test1"</span>&gt;</span>&#123;&#123;methodTest&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"test2-1"</span>&gt;</span>&#123;&#123;methodTest()&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"test2-2"</span>&gt;</span>&#123;&#123;methodTest()&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"test2-3"</span>&gt;</span>&#123;&#123;methodTest()&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"test3-1"</span>&gt;</span>&#123;&#123;computedTest&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"test3-2"</span>&gt;</span>&#123;&#123;computedTest&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
-</ol>
-<p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--script部分--&gt;</span><br><span class="line"><span class="keyword">let</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">'#app'</span>,</span><br><span class="line">  data: &#123;</span><br><span class="line">    message: <span class="string">'我是消息，'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    methodTest() &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">this</span>.message + <span class="string">'现在我用的是methods'</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  computed: &#123;</span><br><span class="line">    computedTest() &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">this</span>.message + <span class="string">'现在我用的是computed'</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
-<h2>2. computed的属性调用</h2>
-<p>细心的朋友可能已经发现了，在<code>HTML</code>的插值里</p>
-<ol>
-<li>computed定义的方法我们是以属性访问的形式调用的<code>computedTest</code></li>
-<li>但是methods定义的方法，我们必须要加上<code>()</code>来调用，如<code>methodTest()</code>，<strong>否则，视图会出现<code>test1</code>的情况</strong>，见下图
-<img src="https://segmentfault.com/img/bV8UtL" alt="clipboard.png"></li>
-</ol>
-<h2>3. computed的缓存功能</h2>
-<p>首先，我们要明白<strong>缓存</strong>究竟有什么用？
-相比大家都知道<code>HTTP缓存</code>，其核心作用就是<strong>对一些服务端未更新的资源进行复用，避免一些无谓的请求，优化了用户的体验</strong></p>
+        <h1 id="1媒体查询"><a class="markdownIt-Anchor" href="#1媒体查询"></a> 1.媒体查询</h1>
+<h2 id="11什么是媒体"><a class="markdownIt-Anchor" href="#11什么是媒体"></a> 1.1什么是媒体</h2>
+<p>这个概念非常重要<br>
+<strong>纸张</strong>，<strong>电脑</strong>，<strong>iPad</strong>，<strong>手机</strong>都是媒体，我们通过媒体查询可以获知用户在什么设备，从而写出针对性的css</p>
+<h2 id="12具体用法"><a class="markdownIt-Anchor" href="#12具体用法"></a> 1.2具体用法</h2>
 <blockquote>
-<p>对于computed也是一样的：</p>
+<p>基础用法</p>
 </blockquote>
-<p>在上面的例子中，<code>methods</code>定义的方法是以<strong>函数调用</strong>的形式来访问的，那么<code>test2-1,test2-2,test2-3</code>是<strong>反复地将<code>methodTest</code>方法运行了三遍</strong>，如果我们碰到一个场景，需要1000个<code>methodTest的返回值</code>，那么毫无疑问，这势必造成大量的<strong>浪费</strong>
-更恐怖的是，如果你更改了message的值，那么这1000个<code>methodTest</code>方法每一个又会重新计算。。。。</p>
-<p>所以，官方文档才反复强调<strong>对于任何复杂逻辑，你都应当使用<code>计算属性</code></strong></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">media</span> (min-width: <span class="number">800px</span>) &#123;</span><br><span class="line">  <span class="comment">/*如果某个媒体满足宽度800px之上，那么css如下*/</span></span><br><span class="line">  <span class="selector-tag">body</span> &#123;</span><br><span class="line">      <span class="attribute">background</span>: <span class="number">#fdf</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@<span class="keyword">media</span> (min-width: <span class="number">600px</span>) and (max-width: <span class="number">800px</span>) &#123;</span><br><span class="line">  <span class="comment">/*如果某个媒体满足宽度在600-800px之间，那么css如下*/</span></span><br><span class="line">  <span class="selector-tag">body</span> &#123;</span><br><span class="line">      <span class="attribute">background</span>: red;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@<span class="keyword">media</span> (min-width: <span class="number">400px</span>)and (max-width: <span class="number">600px</span>) &#123;</span><br><span class="line">  <span class="comment">/*如果某个媒体满足宽度在400-600px之间，那么css如下*/</span></span><br><span class="line">  <span class="selector-tag">body</span> &#123;</span><br><span class="line">      <span class="attribute">background</span>: orange;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@<span class="keyword">media</span> (max-width: <span class="number">400px</span>) &#123;</span><br><span class="line">  <span class="comment">/*如果某个媒体满足宽度在0-400px之间，那么css如下*/</span></span><br><span class="line">  <span class="selector-tag">body</span> &#123;</span><br><span class="line">      <span class="attribute">background</span>: black;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p><strong>computed依赖于data中的数据，只有在它的相关依赖数据发生改变时才会重新求值</strong></p>
+<p>常见用法 —— 与link结合</p>
 </blockquote>
-<p>如上例，在Vue实例化的时候，computed定义computedTest方法会做一次计算，返回一个值，<strong>在随后的代码编写中，只要<code>computedTest方法</code>依赖的<code>message数据</code>不发生改变，<code>computedTest方法</code>是不会重新计算的</strong>，也就是说<code>test3-1,test3-2</code>是直接拿到了<strong>返回值</strong>，而非是computedTest方法重新计算的结果。</p>
-<p>这样的好处也是显而易见的，同样的，如果我们碰到一个场景，需要1000个<code>computedTest的返回值</code>，那么毫无疑问，这相对于<code>methods</code>而言，将大大地节约内存
-哪怕你改变了message的值，<code>computedTest</code>也只会计算一次而已</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"style.css"</span> <span class="attr">media</span>=<span class="string">"(max-width:600px)"</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--这句话的意思是：宽度在0-600之间才会使用这个样式文件--&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>请注意：样式文件依然会下载</strong></p>
+<h1 id="viewport"><a class="markdownIt-Anchor" href="#viewport"></a> viewport</h1>
+<blockquote>
+<p>980的历史</p>
+</blockquote>
+<p>把一个pc端页面在手机端展示，如果<strong>宽度 &lt;= 980</strong>，那么这个页面会等比缩小，超过这个范围，会出现滚动条<br>
+<strong>就像是在在一个980px宽度的小屏幕里显示一样</strong><br>
+为了解决这个问题，有了<code>viewport</code></p>
+<blockquote>
+<p>viewport的作用 —— 控制页面在手机端<strong>不被缩放</strong></p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h1 id="移动端的特点"><a class="markdownIt-Anchor" href="#移动端的特点"></a> 移动端的特点</h1>
+<h2 id="没有mouse事件没有hover事件没有resize没有滚动条只有touch"><a class="markdownIt-Anchor" href="#没有mouse事件没有hover事件没有resize没有滚动条只有touch"></a> 没有mouse事件，没有hover事件，没有resize，没有滚动条，只有touch</h2>
+<blockquote>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/TouchEvent" target="_blank" rel="noopener">MDN触摸事件接口</a></p>
+</blockquote>
+<p>非常简单，一共有四个 —— <code>touchstart</code>,<code>touchmove</code>,<code>touchend</code>,<code>touchcancel</code></p>
+<h2 id="用ontouchstart来判断是否支持touch事件"><a class="markdownIt-Anchor" href="#用ontouchstart来判断是否支持touch事件"></a> 用<code>ontouchstart</code>来判断是否支持touch事件</h2>
+<p>我们在控制台输入<code>div.ontouchstart</code>可以看到<br>
+在<strong>移动端</strong>，其值为<code>null</code>；在<strong>pc端</strong>，其值为<code>undefined</code><br>
+我们可以利用这个来判断JavaScript是否支持touch事件</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="built_in">document</span>.body.ontouchstart !== <span class="literal">undefined</span>) &#123;</span><br><span class="line">  <span class="comment">// code -&gt; Mobile</span></span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="comment">// code -&gt; PC</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="touch事件的clientxy"><a class="markdownIt-Anchor" href="#touch事件的clientxy"></a> <code>touch</code>事件的<code>clientX/Y</code></h2>
+<p>在pc端，<code>clientX/Y</code>我们直接可以通过<code>event.clientX</code>获得<br>
+但在<code>touch</code>事件中，我们获得的方式有些不一样</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> x = e.touches[<span class="number">0</span>].clientX</span><br><span class="line"><span class="keyword">let</span> y = e.touches[<span class="number">0</span>].clientY</span><br></pre></td></tr></table></figure>
+<h2 id="touch事件的touchlist"><a class="markdownIt-Anchor" href="#touch事件的touchlist"></a> <code>touch</code>事件的<code>TouchList</code></h2>
+<p>为什么会有<code>TouchList</code>？<br>
+因为手机端<strong>支持多个手指触控</strong></p>
+<h2 id="移动端阻止页面滑动"><a class="markdownIt-Anchor" href="#移动端阻止页面滑动"></a> 移动端阻止页面滑动</h2>
+<p>在相应的事件里使用<code>e.preventDefault</code></p>
 
       
     </div>
@@ -428,9 +436,7 @@ OK，下面我们看一个具体的例子
       
         <div class="post-tags">
           
-            <a href="/tags/Vue/" rel="tag"># Vue</a>
-          
-            <a href="/tags/computed/" rel="tag"># computed</a>
+            <a href="/tags/移动端/" rel="tag"># 移动端</a>
           
         </div>
       
@@ -443,14 +449,18 @@ OK，下面我们看一个具体的例子
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2018/04/27/深入浅出vue系列(一)从jQuery到MVVM/" rel="next" title="深入浅出vue系列(一)从jQuery到MVVM">
+                <i class="fa fa-chevron-left"></i> 深入浅出vue系列(一)从jQuery到MVVM
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/04/25/Canvas学习笔记(一)/" rel="prev" title="极速入门Canvas(一)基本图形的绘制">
-                极速入门Canvas(一)基本图形的绘制 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/04/30/e-target和e-currentTarget到底有什么不同/" rel="prev" title="e.target和e.currentTarget到底有什么不同">
+                e.target和e.currentTarget到底有什么不同 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -617,7 +627,7 @@ OK，下面我们看一个具体的例子
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">1.computed区别于method的两个核心</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">2. computed的属性调用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">3. computed的缓存功能</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1媒体查询"><span class="nav-number">1.</span> <span class="nav-text"> 1.媒体查询</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#11什么是媒体"><span class="nav-number">1.1.</span> <span class="nav-text"> 1.1什么是媒体</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#12具体用法"><span class="nav-number">1.2.</span> <span class="nav-text"> 1.2具体用法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#viewport"><span class="nav-number">2.</span> <span class="nav-text"> viewport</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#移动端的特点"><span class="nav-number">3.</span> <span class="nav-text"> 移动端的特点</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#没有mouse事件没有hover事件没有resize没有滚动条只有touch"><span class="nav-number">3.1.</span> <span class="nav-text"> 没有mouse事件，没有hover事件，没有resize，没有滚动条，只有touch</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用ontouchstart来判断是否支持touch事件"><span class="nav-number">3.2.</span> <span class="nav-text"> 用ontouchstart来判断是否支持touch事件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#touch事件的clientxy"><span class="nav-number">3.3.</span> <span class="nav-text"> touch事件的clientX/Y</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#touch事件的touchlist"><span class="nav-number">3.4.</span> <span class="nav-text"> touch事件的TouchList</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#移动端阻止页面滑动"><span class="nav-number">3.5.</span> <span class="nav-text"> 移动端阻止页面滑动</span></a></li></ol></li></ol></div>
             
 
           </div>
