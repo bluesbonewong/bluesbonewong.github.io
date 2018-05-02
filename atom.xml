@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-05-02T11:03:03.068Z</updated>
+  <updated>2018-05-02T11:57:16.512Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,13 +17,25 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>移动端入门(动态REM)</title>
-    <link href="http://yoursite.com/2018/05/02/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%85%A5%E9%97%A8(%E5%8A%A8%E6%80%81REM)/"/>
-    <id>http://yoursite.com/2018/05/02/移动端入门(动态REM)/</id>
+    <title>移动端入门(动态REM —— 手机专用的自适应方案)</title>
+    <link href="http://yoursite.com/2018/05/02/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%85%A5%E9%97%A8(%E5%8A%A8%E6%80%81REM%20%E2%80%94%E2%80%94%20%E6%89%8B%E6%9C%BA%E4%B8%93%E7%94%A8%E7%9A%84%E8%87%AA%E9%80%82%E5%BA%94%E6%96%B9%E6%A1%88)/"/>
+    <id>http://yoursite.com/2018/05/02/移动端入门(动态REM —— 手机专用的自适应方案)/</id>
     <published>2018-05-02T11:01:20.000Z</published>
-    <updated>2018-05-02T11:03:03.068Z</updated>
+    <updated>2018-05-02T11:57:16.512Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="1-rem是什么"><a class="markdownIt-Anchor" href="#1-rem是什么"></a> 1. REM是什么</h1><h2 id="11-rem是css常见单位之一"><a class="markdownIt-Anchor" href="#11-rem是css常见单位之一"></a> 1.1 REM是CSS常见单位之一</h2><p><code>px</code>：像素<br><code>em</code>：一个<strong>m</strong>的宽度，或者一个<strong>汉字</strong>的宽度<br><code>vh(viewport height)</code>：视口高度<br><code>vw(viewport width)</code>：视口宽度</p><blockquote><p><code>rem(root-em)</code>：<strong>根元素html</strong>的<code>font-size</code></p></blockquote><a id="more"></a><h2 id="12-rem和em的区别是什么"><a class="markdownIt-Anchor" href="#12-rem和em的区别是什么"></a> 1.2 REM和EM的区别是什么</h2>]]></content>
     
     <summary type="html">
+    
+      &lt;h1 id=&quot;1-rem是什么&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#1-rem是什么&quot;&gt;&lt;/a&gt; 1. REM是什么&lt;/h1&gt;
+&lt;h2 id=&quot;11-rem是css常见单位之一&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#11-rem是css常见单位之一&quot;&gt;&lt;/a&gt; 1.1 REM是CSS常见单位之一&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;px&lt;/code&gt;：像素&lt;br&gt;
+&lt;code&gt;em&lt;/code&gt;：一个&lt;strong&gt;m&lt;/strong&gt;的宽度，或者一个&lt;strong&gt;汉字&lt;/strong&gt;的宽度&lt;br&gt;
+&lt;code&gt;vh(viewport height)&lt;/code&gt;：视口高度&lt;br&gt;
+&lt;code&gt;vw(viewport width)&lt;/code&gt;：视口宽度&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;rem(root-em)&lt;/code&gt;：&lt;strong&gt;根元素html&lt;/strong&gt;的&lt;code&gt;font-size&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
     
     </summary>
     
