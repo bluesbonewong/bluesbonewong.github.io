@@ -111,18 +111,18 @@
 
 
 
-<meta name="description" content="1.媒体查询 1.1什么是媒体 这个概念非常重要 纸张，电脑，iPad，手机都是媒体，我们通过媒体查询可以获知用户在什么设备，从而写出针对性的css 1.2具体用法  基础用法  123456789101112131415161718192021222324252627@media (min-width: 800px) &amp;#123;  /*如果某个媒体满足宽度800px之上，那么css如下*/">
+<meta name="description" content="1.媒体查询 ¶1.1什么是媒体 这个概念非常重要 纸张，电脑，iPad，手机都是媒体，我们通过媒体查询可以获知用户在什么设备，从而写出针对性的css ¶1.2具体用法  基础用法  123456789101112131415161718192021222324252627@media (min-width: 800px) &amp;#123;  /*如果某个媒体满足宽度800px之上，那么css如下*/">
 <meta name="keywords" content="移动端,响应式">
 <meta property="og:type" content="article">
 <meta property="og:title" content="移动端入门(响应式)">
 <meta property="og:url" content="http://yoursite.com/2018/04/29/移动端入门(响应式)/index.html">
 <meta property="og:site_name" content="BluesboneW">
-<meta property="og:description" content="1.媒体查询 1.1什么是媒体 这个概念非常重要 纸张，电脑，iPad，手机都是媒体，我们通过媒体查询可以获知用户在什么设备，从而写出针对性的css 1.2具体用法  基础用法  123456789101112131415161718192021222324252627@media (min-width: 800px) &amp;#123;  /*如果某个媒体满足宽度800px之上，那么css如下*/">
+<meta property="og:description" content="1.媒体查询 ¶1.1什么是媒体 这个概念非常重要 纸张，电脑，iPad，手机都是媒体，我们通过媒体查询可以获知用户在什么设备，从而写出针对性的css ¶1.2具体用法  基础用法  123456789101112131415161718192021222324252627@media (min-width: 800px) &amp;#123;  /*如果某个媒体满足宽度800px之上，那么css如下*/">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2018-05-01T16:40:11.192Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="移动端入门(响应式)">
-<meta name="twitter:description" content="1.媒体查询 1.1什么是媒体 这个概念非常重要 纸张，电脑，iPad，手机都是媒体，我们通过媒体查询可以获知用户在什么设备，从而写出针对性的css 1.2具体用法  基础用法  123456789101112131415161718192021222324252627@media (min-width: 800px) &amp;#123;  /*如果某个媒体满足宽度800px之上，那么css如下*/">
+<meta name="twitter:description" content="1.媒体查询 ¶1.1什么是媒体 这个概念非常重要 纸张，电脑，iPad，手机都是媒体，我们通过媒体查询可以获知用户在什么设备，从而写出针对性的css ¶1.2具体用法  基础用法  123456789101112131415161718192021222324252627@media (min-width: 800px) &amp;#123;  /*如果某个媒体满足宽度800px之上，那么css如下*/">
 
 
 
@@ -375,59 +375,59 @@
 
       
         <h1>1.媒体查询</h1>
-<h2>1.1什么是媒体</h2>
+<h2 id="1-1什么是媒体"><a class="header-anchor" href="#1-1什么是媒体">¶</a>1.1什么是媒体</h2>
 <p>这个概念非常重要
 <strong>纸张</strong>，<strong>电脑</strong>，<strong>iPad</strong>，<strong>手机</strong>都是媒体，我们通过媒体查询可以获知用户在什么设备，从而写出针对性的css</p>
-<h2>1.2具体用法</h2>
+<h2 id="1-2具体用法"><a class="header-anchor" href="#1-2具体用法">¶</a>1.2具体用法</h2>
 <blockquote>
 <p>基础用法</p>
 </blockquote>
-<p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">media</span> (min-width: <span class="number">800px</span>) &#123;</span><br><span class="line">  <span class="comment">/*如果某个媒体满足宽度800px之上，那么css如下*/</span></span><br><span class="line">  <span class="selector-tag">body</span> &#123;</span><br><span class="line">      <span class="attribute">background</span>: <span class="number">#fdf</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@<span class="keyword">media</span> (min-width: <span class="number">600px</span>) and (max-width: <span class="number">800px</span>) &#123;</span><br><span class="line">  <span class="comment">/*如果某个媒体满足宽度在600-800px之间，那么css如下*/</span></span><br><span class="line">  <span class="selector-tag">body</span> &#123;</span><br><span class="line">      <span class="attribute">background</span>: red;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@<span class="keyword">media</span> (min-width: <span class="number">400px</span>)and (max-width: <span class="number">600px</span>) &#123;</span><br><span class="line">  <span class="comment">/*如果某个媒体满足宽度在400-600px之间，那么css如下*/</span></span><br><span class="line">  <span class="selector-tag">body</span> &#123;</span><br><span class="line">      <span class="attribute">background</span>: orange;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@<span class="keyword">media</span> (max-width: <span class="number">400px</span>) &#123;</span><br><span class="line">  <span class="comment">/*如果某个媒体满足宽度在0-400px之间，那么css如下*/</span></span><br><span class="line">  <span class="selector-tag">body</span> &#123;</span><br><span class="line">      <span class="attribute">background</span>: black;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>&lt;!-- more --&gt;</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">media</span> (min-width: <span class="number">800px</span>) &#123;</span><br><span class="line">  <span class="comment">/*如果某个媒体满足宽度800px之上，那么css如下*/</span></span><br><span class="line">  <span class="selector-tag">body</span> &#123;</span><br><span class="line">      <span class="attribute">background</span>: <span class="number">#fdf</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@<span class="keyword">media</span> (min-width: <span class="number">600px</span>) and (max-width: <span class="number">800px</span>) &#123;</span><br><span class="line">  <span class="comment">/*如果某个媒体满足宽度在600-800px之间，那么css如下*/</span></span><br><span class="line">  <span class="selector-tag">body</span> &#123;</span><br><span class="line">      <span class="attribute">background</span>: red;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@<span class="keyword">media</span> (min-width: <span class="number">400px</span>)and (max-width: <span class="number">600px</span>) &#123;</span><br><span class="line">  <span class="comment">/*如果某个媒体满足宽度在400-600px之间，那么css如下*/</span></span><br><span class="line">  <span class="selector-tag">body</span> &#123;</span><br><span class="line">      <span class="attribute">background</span>: orange;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@<span class="keyword">media</span> (max-width: <span class="number">400px</span>) &#123;</span><br><span class="line">  <span class="comment">/*如果某个媒体满足宽度在0-400px之间，那么css如下*/</span></span><br><span class="line">  <span class="selector-tag">body</span> &#123;</span><br><span class="line">      <span class="attribute">background</span>: black;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 <blockquote>
 <p>常见用法 —— 与link结合</p>
 </blockquote>
-<p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"style.css"</span> <span class="attr">media</span>=<span class="string">"(max-width:600px)"</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--这句话的意思是：宽度在0-600之间才会使用这个样式文件--&gt;</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"style.css"</span> <span class="attr">media</span>=<span class="string">"(max-width:600px)"</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--这句话的意思是：宽度在0-600之间才会使用这个样式文件--&gt;</span></span><br></pre></td></tr></table></figure>
 <p><strong>请注意：样式文件依然会下载</strong></p>
 <h1>2.viewport</h1>
-<h2>2.1 980px的历史</h2>
+<h2 id="2-1-980px的历史"><a class="header-anchor" href="#2-1-980px的历史">¶</a>2.1 980px的历史</h2>
 <p>把一个pc端页面在手机端展示，如果<strong>宽度 &lt;= 980</strong>，那么这个页面会等比缩小，超过这个范围，会出现滚动条
 <strong>就像是在在一个980px宽度的小屏幕里显示一样</strong>，同时用户可以<strong>放大</strong>，<strong>缩小</strong>
 为了解决这个问题，有了<code>viewport</code></p>
 <blockquote>
 <p>viewport的作用 —— 控制页面在手机端<strong>不被缩放</strong>且能够<strong>按照设备的实际宽度大小显示页面</strong></p>
 </blockquote>
-<p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<h2>2.2 如何验证</h2>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="2-2-如何验证"><a class="header-anchor" href="#2-2-如何验证">¶</a>2.2 如何验证</h2>
 <p>使用<code>chrome</code>调试工具调试到手机页面，在控制台输入<code>document.documentClient.width</code>即可
 若获得<code>980px</code>，则说明未加<code>meta viewport</code></p>
 <h1>3.移动端的特点</h1>
-<h2>3.1没有hover事件，没有resize，没有滚动条(滚动条不显示)，只有touch事件</h2>
+<h2 id="3-1没有hover事件-没有resize-没有滚动条-滚动条不显示-只有touch事件"><a class="header-anchor" href="#3-1没有hover事件-没有resize-没有滚动条-滚动条不显示-只有touch事件">¶</a>3.1没有hover事件，没有resize，没有滚动条(滚动条不显示)，只有touch事件</h2>
 <p>没有resize —— 在pc端你可以改变浏览窗口大小，但在移动端你不能</p>
 <blockquote>
 <p><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/TouchEvent" target="_blank" rel="noopener">MDN触摸事件接口</a></p>
 </blockquote>
 <p>非常简单，一共有四个 —— <code>touchstart</code>,<code>touchmove</code>,<code>touchend</code>,<code>touchcancel</code></p>
-<h2>3.2用<code>ontouchstart</code>来判断是否支持touch事件</h2>
+<h2 id="3-2用ontouchstart来判断是否支持touch事件"><a class="header-anchor" href="#3-2用ontouchstart来判断是否支持touch事件">¶</a>3.2用<code>ontouchstart</code>来判断是否支持touch事件</h2>
 <p>我们在控制台输入<code>div.ontouchstart</code>可以看到
 在<strong>移动端</strong>，其值为<code>null</code>；在<strong>pc端</strong>，其值为<code>undefined</code>
-我们可以利用这个来判断JavaScript是否支持touch事件
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="built_in">document</span>.body.ontouchstart !== <span class="literal">undefined</span>) &#123;</span><br><span class="line">  <span class="comment">// code -&gt; Mobile</span></span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="comment">// code -&gt; PC</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h2>3.3<code>touch</code>事件的<code>clientX/Y</code></h2>
+我们可以利用这个来判断JavaScript是否支持touch事件</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="built_in">document</span>.body.ontouchstart !== <span class="literal">undefined</span>) &#123;</span><br><span class="line">  <span class="comment">// code -&gt; Mobile</span></span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="comment">// code -&gt; PC</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="3-3touch事件的clientx-y"><a class="header-anchor" href="#3-3touch事件的clientx-y">¶</a>3.3<code>touch</code>事件的<code>clientX/Y</code></h2>
 <p>在pc端，<code>clientX/Y</code>我们直接可以通过<code>event.clientX</code>获得
-但在<code>touch</code>事件中，我们获得的方式有些不一样
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> x = e.touches[<span class="number">0</span>].clientX</span><br><span class="line"><span class="keyword">let</span> y = e.touches[<span class="number">0</span>].clientY</span><br></pre></td></tr></table></figure></p>
+但在<code>touch</code>事件中，我们获得的方式有些不一样</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> x = e.touches[<span class="number">0</span>].clientX</span><br><span class="line"><span class="keyword">let</span> y = e.touches[<span class="number">0</span>].clientY</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>通过<code>clientX/Y</code>来判断用户是否进行<code>向左/右/上/下滑动</code>操作</p>
 </blockquote>
 <p>通过<code>clientX/Y</code>记录下用户两次触摸的<strong>位移差</strong>即可判断
 一般我们使用他人封装好的<code>swipe</code>库，比如<code>vue-swipe</code>，<code>jQuery-swipe</code></p>
-<h2>3.4<code>touch</code>事件的<code>TouchList</code></h2>
+<h2 id="3-4touch事件的touchlist"><a class="header-anchor" href="#3-4touch事件的touchlist">¶</a>3.4<code>touch</code>事件的<code>TouchList</code></h2>
 <p>为什么会有<code>TouchList</code>？
 因为手机端<strong>支持多个手指触控</strong></p>
-<h2>3.5移动端阻止页面滚动</h2>
+<h2 id="3-5移动端阻止页面滚动"><a class="header-anchor" href="#3-5移动端阻止页面滚动">¶</a>3.5移动端阻止页面滚动</h2>
 <p>在相应的事件里使用<code>e.preventDefault</code></p>
-<h2>3.6 在移动端可以尽情使用css3</h2>
+<h2 id="3-6-在移动端可以尽情使用css3"><a class="header-anchor" href="#3-6-在移动端可以尽情使用css3">¶</a>3.6 在移动端可以尽情使用css3</h2>
 <blockquote>
 <p>因为没有IE啦~~</p>
 </blockquote>
@@ -650,7 +650,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">1.媒体查询</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.1.</span> <span class="nav-text">1.1什么是媒体</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.2.</span> <span class="nav-text">1.2具体用法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">2.viewport</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 980px的历史</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 如何验证</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">3.移动端的特点</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">3.1.</span> <span class="nav-text">3.1没有hover事件，没有resize，没有滚动条(滚动条不显示)，只有touch事件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">3.2.</span> <span class="nav-text">3.2用ontouchstart来判断是否支持touch事件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">3.3.</span> <span class="nav-text">3.3touch事件的clientX/Y</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">3.4.</span> <span class="nav-text">3.4touch事件的TouchList</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">3.5.</span> <span class="nav-text">3.5移动端阻止页面滚动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">3.6.</span> <span class="nav-text">3.6 在移动端可以尽情使用css3</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">4.</span> <span class="nav-text">4.响应式的现状</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">1.媒体查询</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1什么是媒体"><span class="nav-number">1.1.</span> <span class="nav-text">¶1.1什么是媒体</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2具体用法"><span class="nav-number">1.2.</span> <span class="nav-text">¶1.2具体用法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">2.viewport</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-980px的历史"><span class="nav-number">2.1.</span> <span class="nav-text">¶2.1 980px的历史</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-如何验证"><span class="nav-number">2.2.</span> <span class="nav-text">¶2.2 如何验证</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">3.移动端的特点</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1没有hover事件-没有resize-没有滚动条-滚动条不显示-只有touch事件"><span class="nav-number">3.1.</span> <span class="nav-text">¶3.1没有hover事件，没有resize，没有滚动条(滚动条不显示)，只有touch事件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2用ontouchstart来判断是否支持touch事件"><span class="nav-number">3.2.</span> <span class="nav-text">¶3.2用ontouchstart来判断是否支持touch事件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3touch事件的clientx-y"><span class="nav-number">3.3.</span> <span class="nav-text">¶3.3touch事件的clientX/Y</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-4touch事件的touchlist"><span class="nav-number">3.4.</span> <span class="nav-text">¶3.4touch事件的TouchList</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-5移动端阻止页面滚动"><span class="nav-number">3.5.</span> <span class="nav-text">¶3.5移动端阻止页面滚动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-6-在移动端可以尽情使用css3"><span class="nav-number">3.6.</span> <span class="nav-text">¶3.6 在移动端可以尽情使用css3</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">4.</span> <span class="nav-text">4.响应式的现状</span></a></li></ol></div>
             
 
           </div>
