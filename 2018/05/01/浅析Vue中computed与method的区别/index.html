@@ -111,19 +111,19 @@
 
 
 
-<meta name="description" content="其实官方文档对这个已经说的很清楚了，笔者不过是在其基础上进行归纳总结，各位看官还是先去读一下官方文档吧   1.computed区别于method的两个核心 在官方文档中，强调了computed区别于method最重要的两点  computed是属性调用，而methods是函数调用 computed带有缓存功能，而methods不是  OK，下面我们看一个具体的例子">
+<meta name="description" content="其实官方文档对这个已经说的很清楚了，笔者不过是在其基础上进行归纳总结，各位看官还是先去读一下官方文档吧  1.computed区别于method的两个核心 在官方文档中，强调了computed区别于method最重要的两点  computed是属性调用，而methods是函数调用 computed带有缓存功能，而methods不是  OK，下面我们看一个具体的例子 &amp;lt;!--more--&amp;g">
 <meta name="keywords" content="Vue,computed">
 <meta property="og:type" content="article">
 <meta property="og:title" content="浅析Vue中computed与method的区别">
 <meta property="og:url" content="http://yoursite.com/2018/05/01/浅析Vue中computed与method的区别/index.html">
 <meta property="og:site_name" content="BluesboneW">
-<meta property="og:description" content="其实官方文档对这个已经说的很清楚了，笔者不过是在其基础上进行归纳总结，各位看官还是先去读一下官方文档吧   1.computed区别于method的两个核心 在官方文档中，强调了computed区别于method最重要的两点  computed是属性调用，而methods是函数调用 computed带有缓存功能，而methods不是  OK，下面我们看一个具体的例子">
+<meta property="og:description" content="其实官方文档对这个已经说的很清楚了，笔者不过是在其基础上进行归纳总结，各位看官还是先去读一下官方文档吧  1.computed区别于method的两个核心 在官方文档中，强调了computed区别于method最重要的两点  computed是属性调用，而methods是函数调用 computed带有缓存功能，而methods不是  OK，下面我们看一个具体的例子 &amp;lt;!--more--&amp;g">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://segmentfault.com/img/bV8UtL">
 <meta property="og:updated_time" content="2018-05-01T14:32:12.161Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="浅析Vue中computed与method的区别">
-<meta name="twitter:description" content="其实官方文档对这个已经说的很清楚了，笔者不过是在其基础上进行归纳总结，各位看官还是先去读一下官方文档吧   1.computed区别于method的两个核心 在官方文档中，强调了computed区别于method最重要的两点  computed是属性调用，而methods是函数调用 computed带有缓存功能，而methods不是  OK，下面我们看一个具体的例子">
+<meta name="twitter:description" content="其实官方文档对这个已经说的很清楚了，笔者不过是在其基础上进行归纳总结，各位看官还是先去读一下官方文档吧  1.computed区别于method的两个核心 在官方文档中，强调了computed区别于method最重要的两点  computed是属性调用，而methods是函数调用 computed带有缓存功能，而methods不是  OK，下面我们看一个具体的例子 &amp;lt;!--more--&amp;g">
 <meta name="twitter:image" content="https://segmentfault.com/img/bV8UtL">
 
 
@@ -379,37 +379,37 @@
         <blockquote>
 <p>其实官方文档对这个已经说的很清楚了，笔者不过是在其基础上进行归纳总结，各位看官还是先去<a href="https://cn.vuejs.org/v2/guide/computed.html#%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7%E7%BC%93%E5%AD%98-vs-%E6%96%B9%E6%B3%95" target="_blank" rel="noopener">读一下官方文档</a>吧</p>
 </blockquote>
-<h2 id="1computed区别于method的两个核心"><a class="markdownIt-Anchor" href="#1computed区别于method的两个核心"></a> 1.computed区别于method的两个核心</h2>
+<h2>1.computed区别于method的两个核心</h2>
 <p>在官方文档中，强调了computed区别于method最重要的两点</p>
 <ol>
 <li>computed是<strong>属性调用</strong>，而methods是<strong>函数调用</strong></li>
 <li>computed带有<strong>缓存功能</strong>，而methods不是</li>
 </ol>
 <p>OK，下面我们看一个具体的例子</p>
-<a id="more"></a>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--HTML部分--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>&#123;&#123;message&#125;&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"test1"</span>&gt;</span>&#123;&#123;methodTest&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"test2-1"</span>&gt;</span>&#123;&#123;methodTest()&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"test2-2"</span>&gt;</span>&#123;&#123;methodTest()&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"test2-3"</span>&gt;</span>&#123;&#123;methodTest()&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"test3-1"</span>&gt;</span>&#123;&#123;computedTest&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"test3-2"</span>&gt;</span>&#123;&#123;computedTest&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--script部分--&gt;</span><br><span class="line"><span class="keyword">let</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">'#app'</span>,</span><br><span class="line">  data: &#123;</span><br><span class="line">    message: <span class="string">'我是消息，'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    methodTest() &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">this</span>.message + <span class="string">'现在我用的是methods'</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  computed: &#123;</span><br><span class="line">    computedTest() &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">this</span>.message + <span class="string">'现在我用的是computed'</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<h2 id="2-computed的属性调用"><a class="markdownIt-Anchor" href="#2-computed的属性调用"></a> 2. computed的属性调用</h2>
+<p>&lt;!--more--&gt;</p>
+<p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--HTML部分--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>&#123;&#123;message&#125;&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"test1"</span>&gt;</span>&#123;&#123;methodTest&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"test2-1"</span>&gt;</span>&#123;&#123;methodTest()&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"test2-2"</span>&gt;</span>&#123;&#123;methodTest()&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"test2-3"</span>&gt;</span>&#123;&#123;methodTest()&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"test3-1"</span>&gt;</span>&#123;&#123;computedTest&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"test3-2"</span>&gt;</span>&#123;&#123;computedTest&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--script部分--&gt;</span><br><span class="line"><span class="keyword">let</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">'#app'</span>,</span><br><span class="line">  data: &#123;</span><br><span class="line">    message: <span class="string">'我是消息，'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    methodTest() &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">this</span>.message + <span class="string">'现在我用的是methods'</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  computed: &#123;</span><br><span class="line">    computedTest() &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">this</span>.message + <span class="string">'现在我用的是computed'</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<h2>2. computed的属性调用</h2>
 <p>细心的朋友可能已经发现了，在<code>HTML</code>的插值里</p>
 <ol>
 <li>computed定义的方法我们是以属性访问的形式调用的<code>computedTest</code></li>
-<li>但是methods定义的方法，我们必须要加上<code>()</code>来调用，如<code>methodTest()</code>，<strong>否则，视图会出现<code>test1</code>的情况</strong>，见下图<br>
+<li>但是methods定义的方法，我们必须要加上<code>()</code>来调用，如<code>methodTest()</code>，<strong>否则，视图会出现<code>test1</code>的情况</strong>，见下图
 <img src="https://segmentfault.com/img/bV8UtL" alt="clipboard.png"></li>
 </ol>
-<h2 id="3-computed的缓存功能"><a class="markdownIt-Anchor" href="#3-computed的缓存功能"></a> 3. computed的缓存功能</h2>
-<p>首先，我们要明白<strong>缓存</strong>究竟有什么用？<br>
+<h2>3. computed的缓存功能</h2>
+<p>首先，我们要明白<strong>缓存</strong>究竟有什么用？
 相比大家都知道<code>HTTP缓存</code>，其核心作用就是<strong>对一些服务端未更新的资源进行复用，避免一些无谓的请求，优化了用户的体验</strong></p>
 <blockquote>
 <p>对于computed也是一样的：</p>
 </blockquote>
-<p>在上面的例子中，<code>methods</code>定义的方法是以<strong>函数调用</strong>的形式来访问的，那么<code>test2-1,test2-2,test2-3</code>是<strong>反复地将<code>methodTest</code>方法运行了三遍</strong>，如果我们碰到一个场景，需要1000个<code>methodTest的返回值</code>，那么毫无疑问，这势必造成大量的<strong>浪费</strong><br>
+<p>在上面的例子中，<code>methods</code>定义的方法是以<strong>函数调用</strong>的形式来访问的，那么<code>test2-1,test2-2,test2-3</code>是<strong>反复地将<code>methodTest</code>方法运行了三遍</strong>，如果我们碰到一个场景，需要1000个<code>methodTest的返回值</code>，那么毫无疑问，这势必造成大量的<strong>浪费</strong>
 更恐怖的是，如果你更改了message的值，那么这1000个<code>methodTest</code>方法每一个又会重新计算。。。。</p>
 <p>所以，官方文档才反复强调<strong>对于任何复杂逻辑，你都应当使用<code>计算属性</code></strong></p>
 <blockquote>
 <p><strong>computed依赖于data中的数据，只有在它的相关依赖数据发生改变时才会重新求值</strong></p>
 </blockquote>
 <p>如上例，在Vue实例化的时候，computed定义computedTest方法会做一次计算，返回一个值，<strong>在随后的代码编写中，只要<code>computedTest方法</code>依赖的<code>message数据</code>不发生改变，<code>computedTest方法</code>是不会重新计算的</strong>，也就是说<code>test3-1,test3-2</code>是直接拿到了<strong>返回值</strong>，而非是computedTest方法重新计算的结果。</p>
-<p>这样的好处也是显而易见的，同样的，如果我们碰到一个场景，需要1000个<code>computedTest的返回值</code>，那么毫无疑问，这相对于<code>methods</code>而言，将大大地节约内存<br>
+<p>这样的好处也是显而易见的，同样的，如果我们碰到一个场景，需要1000个<code>computedTest的返回值</code>，那么毫无疑问，这相对于<code>methods</code>而言，将大大地节约内存
 哪怕你改变了message的值，<code>computedTest</code>也只会计算一次而已</p>
 
       
@@ -452,6 +452,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/05/02/移动端入门(动态REM)/" rel="prev" title="移动端入门(动态REM)">
+                移动端入门(动态REM) <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -532,7 +536,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -617,7 +621,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1computed区别于method的两个核心"><span class="nav-number">1.</span> <span class="nav-text"> 1.computed区别于method的两个核心</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-computed的属性调用"><span class="nav-number">2.</span> <span class="nav-text"> 2. computed的属性调用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-computed的缓存功能"><span class="nav-number">3.</span> <span class="nav-text"> 3. computed的缓存功能</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">1.computed区别于method的两个核心</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">2. computed的属性调用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">3. computed的缓存功能</span></a></li></ol></div>
             
 
           </div>

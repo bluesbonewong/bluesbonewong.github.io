@@ -111,18 +111,18 @@
 
 
 
-<meta name="description" content="canvas基础知识梗概 以鼠标为例，我们只要知道什么时候按下去，什么时候动，什么时候松开就可以判断出用户是否在画画 使用onmousedown判断什么时候按下去 使用onmousemove判断什么时候动 —— 有bug，移动速度过快会跟不上[用canvas的两点之间连线] 使用onmouseup判断什么时候松开   我们先用JavaScript模拟出Canvas的效果   canvas基础知">
+<meta name="description" content="&amp;lt;!-- more --&amp;gt; canvas基础知识梗概 以鼠标为例，我们只要知道什么时候按下去，什么时候动，什么时候松开就可以判断出用户是否在画画 使用onmousedown判断什么时候按下去 使用onmousemove判断什么时候动 —— 有bug，移动速度过快会跟不上[用canvas的两点之间连线] 使用onmouseup判断什么时候松开 &amp;lt;!-- more --&amp;gt;  我">
 <meta name="keywords" content="Canvas,HTML5">
 <meta property="og:type" content="article">
 <meta property="og:title" content="极速入门Canvas(一)基本图形的绘制">
 <meta property="og:url" content="http://yoursite.com/2018/04/25/Canvas学习笔记(一)/index.html">
 <meta property="og:site_name" content="BluesboneW">
-<meta property="og:description" content="canvas基础知识梗概 以鼠标为例，我们只要知道什么时候按下去，什么时候动，什么时候松开就可以判断出用户是否在画画 使用onmousedown判断什么时候按下去 使用onmousemove判断什么时候动 —— 有bug，移动速度过快会跟不上[用canvas的两点之间连线] 使用onmouseup判断什么时候松开   我们先用JavaScript模拟出Canvas的效果   canvas基础知">
+<meta property="og:description" content="&amp;lt;!-- more --&amp;gt; canvas基础知识梗概 以鼠标为例，我们只要知道什么时候按下去，什么时候动，什么时候松开就可以判断出用户是否在画画 使用onmousedown判断什么时候按下去 使用onmousemove判断什么时候动 —— 有bug，移动速度过快会跟不上[用canvas的两点之间连线] 使用onmouseup判断什么时候松开 &amp;lt;!-- more --&amp;gt;  我">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2018-05-01T14:27:27.182Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="极速入门Canvas(一)基本图形的绘制">
-<meta name="twitter:description" content="canvas基础知识梗概 以鼠标为例，我们只要知道什么时候按下去，什么时候动，什么时候松开就可以判断出用户是否在画画 使用onmousedown判断什么时候按下去 使用onmousemove判断什么时候动 —— 有bug，移动速度过快会跟不上[用canvas的两点之间连线] 使用onmouseup判断什么时候松开   我们先用JavaScript模拟出Canvas的效果   canvas基础知">
+<meta name="twitter:description" content="&amp;lt;!-- more --&amp;gt; canvas基础知识梗概 以鼠标为例，我们只要知道什么时候按下去，什么时候动，什么时候松开就可以判断出用户是否在画画 使用onmousedown判断什么时候按下去 使用onmousemove判断什么时候动 —— 有bug，移动速度过快会跟不上[用canvas的两点之间连线] 使用onmouseup判断什么时候松开 &amp;lt;!-- more --&amp;gt;  我">
 
 
 
@@ -374,46 +374,46 @@
       
 
       
-        <a id="more"></a>
-<h2 id="canvas基础知识梗概"><a class="markdownIt-Anchor" href="#canvas基础知识梗概"></a> canvas基础知识梗概</h2>
+        <p>&lt;!-- more --&gt;</p>
+<h2>canvas基础知识梗概</h2>
 <p>以鼠标为例，我们只要知道<code>什么时候按下去</code>，<code>什么时候动</code>，<code>什么时候松开</code>就可以判断出用户是否在画画</p>
-<p>使用<code>onmousedown</code>判断什么时候按下去<br>
-使用<code>onmousemove</code>判断什么时候动 —— 有bug，移动速度过快会跟不上[用canvas的两点之间连线]<br>
+<p>使用<code>onmousedown</code>判断什么时候按下去
+使用<code>onmousemove</code>判断什么时候动 —— 有bug，移动速度过快会跟不上[用canvas的两点之间连线]
 使用<code>onmouseup</code>判断什么时候松开</p>
-<!-- more -->
+<p>&lt;!-- more --&gt;</p>
 <blockquote>
 <p>我们先用JavaScript模拟出Canvas的效果</p>
 </blockquote>
-<h2 id="canvas基础知识梗概-2"><a class="markdownIt-Anchor" href="#canvas基础知识梗概-2"></a> canvas基础知识梗概</h2>
+<h2>canvas基础知识梗概</h2>
 <ol>
-<li><canvas> 看起来和 <img> 元素很相像</canvas></li>
-<li>为了在 Canvas 上绘制图形，我们使用一个JavaScript上下文对象，它能动态创建图像（ creates graphics on the fly）<br>
-getContext() 的方法是用来获得渲染上下文和它的绘画功能，getContext()只有一个参数——上下文的格式</li>
+<li>&lt;canvas&gt; 看起来和 &lt;img&gt; 元素很相像</li>
+<li>为了在 Canvas 上绘制图形，我们使用一个JavaScript上下文对象，它能动态创建图像（ creates graphics on the fly）
+getContext() 的方法是用来获得渲染上下文和它的绘画功能，getContext()只有一个参数——上下文的格式
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> canvas = <span class="built_in">document</span>.getElementById(<span class="string">'tutorial'</span>)</span><br><span class="line"><span class="keyword">var</span> ctx = canvas.getContext(<span class="string">'2d'</span>)</span><br></pre></td></tr></table></figure></li>
 </ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> canvas = <span class="built_in">document</span>.getElementById(<span class="string">'tutorial'</span>)</span><br><span class="line"><span class="keyword">var</span> ctx = canvas.getContext(<span class="string">'2d'</span>)</span><br></pre></td></tr></table></figure>
-<h2 id="canvas基础api学习法"><a class="markdownIt-Anchor" href="#canvas基础api学习法"></a> canvas基础API学习法</h2>
+<h2>canvas基础API学习法</h2>
 <blockquote>
 <p>一个画面的形成说白了就是两点。一是<code>画布</code>，二就是<code>点线面</code>，下面我们通过这两大方面来学习canvas的API</p>
 </blockquote>
-<h2 id="画布大小如何控制"><a class="markdownIt-Anchor" href="#画布大小如何控制"></a> 画布大小如何控制</h2>
-<p>Canvas 的画布默认大小为300像素×150像素<br>
-请使用使用HTML的width和height属性为<canvas>明确规定画布宽高，而不是使用CSS，否则图形会扭曲</canvas></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">canvas</span> <span class="attr">id</span>=<span class="string">"tutorial"</span> <span class="attr">width</span>=<span class="string">"150"</span> <span class="attr">height</span>=<span class="string">"150"</span>&gt;</span><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2>画布大小如何控制</h2>
+<p>Canvas 的画布默认大小为300像素×150像素
+请使用使用HTML的width和height属性为&lt;canvas&gt;明确规定画布宽高，而不是使用CSS，否则图形会扭曲
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">canvas</span> <span class="attr">id</span>=<span class="string">"tutorial"</span> <span class="attr">width</span>=<span class="string">"150"</span> <span class="attr">height</span>=<span class="string">"150"</span>&gt;</span><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
 <p>用js获取用户的屏幕宽高，动态加载到HTML上</p>
-<h2 id="点"><a class="markdownIt-Anchor" href="#点"></a> 点</h2>
-<h2 id="线"><a class="markdownIt-Anchor" href="#线"></a> 线</h2>
-<p>context.lineTo()<br>
+<h2>点</h2>
+<h2>线</h2>
+<p>context.lineTo()
 ctx.lineWidth = xxx  设置线的宽度</p>
-<h3 id="矩形相关api"><a class="markdownIt-Anchor" href="#矩形相关api"></a> 矩形相关API</h3>
+<h3>矩形相关API</h3>
 <p>HTML中的元素canvas只支持一种原生的图形绘制：矩形。所有其他的图形的绘制都至少需要生成一条路径。</p>
-<p>fillRect(x, y, width, height)<br>
-绘制一个填充的矩形<br>
-strokeRect(x, y, width, height)<br>
-绘制一个矩形的边框<br>
-clearRect(x, y, width, height)<br>
-清除指定矩形区域的<code>填充部分</code>，让清除部分完全透明<br>
+<p>fillRect(x, y, width, height)
+绘制一个填充的矩形
+strokeRect(x, y, width, height)
+绘制一个矩形的边框
+clearRect(x, y, width, height)
+清除指定矩形区域的<code>填充部分</code>，让清除部分完全透明
 以上的三个函数绘制之后会马上显现在canvas上，即时生效。</p>
-<h3 id="路径相关api"><a class="markdownIt-Anchor" href="#路径相关api"></a> 路径相关API</h3>
+<h3>路径相关API</h3>
 <blockquote>
 <p>图形的基本元素是路径——路径是通过不同颜色和宽度的线段或曲线相连形成的不同形状的点的集合</p>
 </blockquote>
@@ -423,24 +423,24 @@ clearRect(x, y, width, height)<br>
 <li>之后你把路径封闭。</li>
 <li>一旦路径生成，你就能通过描边或填充路径区域来渲染图形。</li>
 </ol>
-<h4 id="基础api"><a class="markdownIt-Anchor" href="#基础api"></a> 基础API</h4>
-<p>除了矩形外，所以图形绘制的开始和结束都要遵循以下两个步骤<br>
-<strong>开始</strong><br>
-beginPath()<br>
-新建一条路径，生成之后，图形绘制命令被指向到路径上生成路径<br>
-<strong>结束</strong><br>
-closePath()<br>
-闭合路径之后图形绘制命令又重新指向到上下文中。<br>
-stroke() —— 包含closePath()<br>
-通过线条来绘制图形轮廓 —— 相当于<code>border</code><br>
-fill() —— 包含closePath()<br>
+<h4>基础API</h4>
+<p>除了矩形外，所以图形绘制的开始和结束都要遵循以下两个步骤
+<strong>开始</strong>
+beginPath()
+新建一条路径，生成之后，图形绘制命令被指向到路径上生成路径
+<strong>结束</strong>
+closePath()
+闭合路径之后图形绘制命令又重新指向到上下文中。
+stroke() —— 包含closePath()
+通过线条来绘制图形轮廓 —— 相当于<code>border</code>
+fill() —— 包含closePath()
 通过填充路径的内容区域生成实心的图形 —— 相当于<code>background</code></p>
-<h4 id="核心api"><a class="markdownIt-Anchor" href="#核心api"></a> 核心API</h4>
-<p>moveTo(x, y)<br>
+<h4>核心API</h4>
+<p>moveTo(x, y)
 将笔触移动到指定的坐标x以及y上。类似于抬笔到另一点</p>
-<h4 id="圆弧"><a class="markdownIt-Anchor" href="#圆弧"></a> 圆弧</h4>
-<p>arc(x, y, radius, startAngle, endAngle, anticlockwise)<br>
-画一个以（x,y）为圆心的以radius为半径的圆弧（圆），从startAngle开始到endAngle结束，按照anticlockwise给定的方向（默认为顺时针）来生成。<br>
+<h4>圆弧</h4>
+<p>arc(x, y, radius, startAngle, endAngle, anticlockwise)
+画一个以（x,y）为圆心的以radius为半径的圆弧（圆），从startAngle开始到endAngle结束，按照anticlockwise给定的方向（默认为顺时针）来生成。
 注意：arc()函数中的角度单位是弧度，不是度数。角度与弧度的js表达式:<strong>radians=(Math.PI/180) * degrees</strong></p>
 
       
@@ -563,7 +563,7 @@ fill() —— 包含closePath()<br>
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -648,7 +648,7 @@ fill() —— 包含closePath()<br>
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#canvas基础知识梗概"><span class="nav-number">1.</span> <span class="nav-text"> canvas基础知识梗概</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#canvas基础知识梗概-2"><span class="nav-number">2.</span> <span class="nav-text"> canvas基础知识梗概</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#canvas基础api学习法"><span class="nav-number">3.</span> <span class="nav-text"> canvas基础API学习法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#画布大小如何控制"><span class="nav-number">4.</span> <span class="nav-text"> 画布大小如何控制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#点"><span class="nav-number">5.</span> <span class="nav-text"> 点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线"><span class="nav-number">6.</span> <span class="nav-text"> 线</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#矩形相关api"><span class="nav-number">6.1.</span> <span class="nav-text"> 矩形相关API</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#路径相关api"><span class="nav-number">6.2.</span> <span class="nav-text"> 路径相关API</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基础api"><span class="nav-number">6.2.1.</span> <span class="nav-text"> 基础API</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#核心api"><span class="nav-number">6.2.2.</span> <span class="nav-text"> 核心API</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#圆弧"><span class="nav-number">6.2.3.</span> <span class="nav-text"> 圆弧</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">canvas基础知识梗概</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">canvas基础知识梗概</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">canvas基础API学习法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">4.</span> <span class="nav-text">画布大小如何控制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">5.</span> <span class="nav-text">点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">6.</span> <span class="nav-text">线</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">6.1.</span> <span class="nav-text">矩形相关API</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">6.2.</span> <span class="nav-text">路径相关API</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">6.2.1.</span> <span class="nav-text">基础API</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">6.2.2.</span> <span class="nav-text">核心API</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">6.2.3.</span> <span class="nav-text">圆弧</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
