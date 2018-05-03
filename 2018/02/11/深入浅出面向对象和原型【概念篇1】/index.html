@@ -100,7 +100,7 @@
 
 
 
-  <meta name="keywords" content="Vue,computed," />
+  <meta name="keywords" content="面向对象,原型," />
 
 
 
@@ -111,20 +111,18 @@
 
 
 
-<meta name="description" content="其实官方文档对这个已经说的很清楚了，笔者不过是在其基础上进行归纳总结，各位看官还是先去读一下官方文档吧  ¶1.computed区别于method的两个核心 在官方文档中，强调了computed区别于method最重要的两点  computed是属性调用，而methods是函数调用 computed带有缓存功能，而methods不是  OK，下面我们看一个具体的例子">
-<meta name="keywords" content="Vue,computed">
+<meta name="description" content="¶1.什么是面向对象 面向对象是一种思维方式[与语言无关]，教你如何思考代码，  Object Oriented Programming  orient 的英文意思 是 使朝向 那么，面向对象不如说成是以对象为基础的一种编程思维方式">
+<meta name="keywords" content="面向对象,原型">
 <meta property="og:type" content="article">
-<meta property="og:title" content="浅析Vue中computed与method的区别">
-<meta property="og:url" content="http://yoursite.com/2018/05/01/浅析Vue中computed与method的区别/index.html">
+<meta property="og:title" content="深入浅出面向对象和原型【概念篇1】">
+<meta property="og:url" content="http://yoursite.com/2018/02/11/深入浅出面向对象和原型【概念篇1】/index.html">
 <meta property="og:site_name" content="BluesboneW">
-<meta property="og:description" content="其实官方文档对这个已经说的很清楚了，笔者不过是在其基础上进行归纳总结，各位看官还是先去读一下官方文档吧  ¶1.computed区别于method的两个核心 在官方文档中，强调了computed区别于method最重要的两点  computed是属性调用，而methods是函数调用 computed带有缓存功能，而methods不是  OK，下面我们看一个具体的例子">
+<meta property="og:description" content="¶1.什么是面向对象 面向对象是一种思维方式[与语言无关]，教你如何思考代码，  Object Oriented Programming  orient 的英文意思 是 使朝向 那么，面向对象不如说成是以对象为基础的一种编程思维方式">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://segmentfault.com/img/bV8UtL">
-<meta property="og:updated_time" content="2018-05-01T14:32:12.161Z">
+<meta property="og:updated_time" content="2018-05-03T02:44:33.342Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="浅析Vue中computed与method的区别">
-<meta name="twitter:description" content="其实官方文档对这个已经说的很清楚了，笔者不过是在其基础上进行归纳总结，各位看官还是先去读一下官方文档吧  ¶1.computed区别于method的两个核心 在官方文档中，强调了computed区别于method最重要的两点  computed是属性调用，而methods是函数调用 computed带有缓存功能，而methods不是  OK，下面我们看一个具体的例子">
-<meta name="twitter:image" content="https://segmentfault.com/img/bV8UtL">
+<meta name="twitter:title" content="深入浅出面向对象和原型【概念篇1】">
+<meta name="twitter:description" content="¶1.什么是面向对象 面向对象是一种思维方式[与语言无关]，教你如何思考代码，  Object Oriented Programming  orient 的英文意思 是 使朝向 那么，面向对象不如说成是以对象为基础的一种编程思维方式">
 
 
 
@@ -154,13 +152,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/05/01/浅析Vue中computed与method的区别/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/02/11/深入浅出面向对象和原型【概念篇1】/"/>
 
 
 
 
 
-  <title>浅析Vue中computed与method的区别 | BluesboneW</title>
+  <title>深入浅出面向对象和原型【概念篇1】 | BluesboneW</title>
   
 
 
@@ -287,7 +285,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/01/浅析Vue中computed与method的区别/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/11/深入浅出面向对象和原型【概念篇1】/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="大汪">
@@ -304,7 +302,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">浅析Vue中computed与method的区别</h1>
+          <h1 class="post-title" itemprop="name headline">深入浅出面向对象和原型【概念篇1】</h1>
         
 
         <div class="post-meta">
@@ -316,8 +314,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-01T22:32:12+08:00">
-                2018-05-01
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-11T10:36:53+08:00">
+                2018-02-11
               </time>
             
 
@@ -339,8 +337,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Vue/" itemprop="url" rel="index">
-                    <span itemprop="name">Vue</span>
+                  <a href="/categories/JS/" itemprop="url" rel="index">
+                    <span itemprop="name">JS</span>
                   </a>
                 </span>
 
@@ -376,42 +374,68 @@
       
 
       
-        <blockquote>
-<p>其实官方文档对这个已经说的很清楚了，笔者不过是在其基础上进行归纳总结，各位看官还是先去<a href="https://cn.vuejs.org/v2/guide/computed.html#%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7%E7%BC%93%E5%AD%98-vs-%E6%96%B9%E6%B3%95" target="_blank" rel="noopener">读一下官方文档</a>吧</p>
+        <h2 id="1-什么是面向对象"><a class="header-anchor" href="#1-什么是面向对象">¶</a>1.什么是面向对象</h2>
+<p>面向对象是一种思维方式[与语言无关]，教你如何思考代码，</p>
+<blockquote>
+<p>Object Oriented Programming</p>
 </blockquote>
-<h2 id="1-computed区别于method的两个核心"><a class="header-anchor" href="#1-computed区别于method的两个核心">¶</a>1.computed区别于method的两个核心</h2>
-<p>在官方文档中，强调了computed区别于method最重要的两点</p>
-<ol>
-<li>computed是<strong>属性调用</strong>，而methods是<strong>函数调用</strong></li>
-<li>computed带有<strong>缓存功能</strong>，而methods不是</li>
-</ol>
-<p>OK，下面我们看一个具体的例子</p>
+<p><code>orient</code> 的英文意思 是 <code>使朝向</code>
+那么，面向对象不如说成是<strong>以对象为基础</strong>的一种编程<strong>思维方式</strong></p>
 <a id="more"></a>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--HTML部分--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>&#123;&#123;message&#125;&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"test1"</span>&gt;</span>&#123;&#123;methodTest&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"test2-1"</span>&gt;</span>&#123;&#123;methodTest()&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"test2-2"</span>&gt;</span>&#123;&#123;methodTest()&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"test2-3"</span>&gt;</span>&#123;&#123;methodTest()&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"test3-1"</span>&gt;</span>&#123;&#123;computedTest&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"test3-2"</span>&gt;</span>&#123;&#123;computedTest&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--script部分--&gt;</span><br><span class="line"><span class="keyword">let</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">'#app'</span>,</span><br><span class="line">  data: &#123;</span><br><span class="line">    message: <span class="string">'我是消息，'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    methodTest() &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">this</span>.message + <span class="string">'现在我用的是methods'</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  computed: &#123;</span><br><span class="line">    computedTest() &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">this</span>.message + <span class="string">'现在我用的是computed'</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<h2 id="2-computed的属性调用"><a class="header-anchor" href="#2-computed的属性调用">¶</a>2. computed的属性调用</h2>
-<p>细心的朋友可能已经发现了，在<code>HTML</code>的插值里</p>
+<h2 id="2-面向对象的主要概念浅析"><a class="header-anchor" href="#2-面向对象的主要概念浅析">¶</a>2.面向对象的主要概念浅析</h2>
+<p>好了，现在让我们进入正题</p>
+<p>面向对象的难点之一就是它有一大堆的概念——类、实例、成员等等，为了让我们更好地理解这些概念，我们从一个故事讲起。</p>
+<hr>
+<ul>
+<li>龚先生是一位在当地非常有名气的厨师，但他对自己用的锅一直不太满意，于是打算自己造一个</li>
+<li>龚先生想好了。他的第一个锅必须要剑走偏锋，于是起名为“日天锅”，并且得是金色的，而且必须要用寒铁制造，方能展现实力</li>
+<li>龚先生风风火火画好了一份设计图纸</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 日天锅</span><br><span class="line">// ---------</span><br><span class="line">// 颜色：金</span><br><span class="line">// 用料：钛合金</span><br><span class="line">// 功能：炒菜()</span><br></pre></td></tr></table></figure>
+<ul>
+<li>日天锅造出来后，龚先生如有神助，手艺直线上升，日天锅的大名就此传开</li>
+<li>某日，一土豪前来，让龚先生为他也定做一款日天锅，不过这次要镶嵌24颗钻石</li>
+<li>龚先生欣然接受，并画好了第二份设计图纸，只是 <strong>在原有的基础上镶嵌了钻石</strong></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">// 镶钻日天锅</span><br><span class="line">// ---------</span><br><span class="line">// 镶嵌物：钻石</span><br></pre></td></tr></table></figure>
+<ul>
+<li>土豪把镶钻日天锅带回家后，瞬间得到了一众土豪太太和她的闺蜜圈的喜爱，大家纷纷询问能否批量生产，在原有的基础上加上煮菜功能</li>
+<li>龚先生自然不会放过这个赚钱的机会，于是乎画出了第三份图纸， <strong>只是在【镶钻日天锅】原有的基础上增加了新功能</strong></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">// 镶钻日天锅——土豪太太版</span><br><span class="line">// ---------</span><br><span class="line">// 新功能：煮菜()</span><br></pre></td></tr></table></figure>
+<ul>
+<li>从那以后龚先生再也没有炒过菜，而是专心致志进行着造锅业务，而且大力发展物流业务，努力早日让客户享受到“人在家中坐，锅从天上来”的顶级服务</li>
+<li>完</li>
+</ul>
+<hr>
+<h3 id="2-1类-实例-成员-方法-实例成员-静态类"><a class="header-anchor" href="#2-1类-实例-成员-方法-实例成员-静态类">¶</a>2.1类/实例/成员/方法/实例成员/静态类</h3>
+<p>根据这个故事，我们来解释一下面向对象一些名字非常抽象的概念<sup>_</sup>：</p>
 <ol>
-<li>computed定义的方法我们是以属性访问的形式调用的<code>computedTest</code></li>
-<li>但是methods定义的方法，我们必须要加上<code>()</code>来调用，如<code>methodTest()</code>，<strong>否则，视图会出现<code>test1</code>的情况</strong>，见下图
-<img src="https://segmentfault.com/img/bV8UtL" alt="clipboard.png"></li>
+<li><strong>类</strong>：龚先生的设计图纸就是类【你也可以把类理解成一个constructor[构造器]】</li>
+<li><strong>实例(对象)</strong>：龚先生根据图纸制造出来的锅就是实例【实例其实就是对象，只不过在面向对象中叫做实例】</li>
+<li><strong>成员(属性)</strong>：龚先生的图纸里，例如颜色、用料等，这些被称为成员</li>
+<li><strong>方法(函数)</strong>：龚先生图纸里，例如炒菜()、煮菜()</li>
+<li><strong>实例成员</strong>：也就是实例的属性，比如日天锅的颜色</li>
+<li><strong>静态类</strong>：无法实例化的类，龚先生日后可能会搞出一些奇怪的图纸，这些图纸根本逻辑可能就是错的，以至于根据这个图纸是造不出来锅的</li>
 </ol>
-<h2 id="3-computed的缓存功能"><a class="header-anchor" href="#3-computed的缓存功能">¶</a>3. computed的缓存功能</h2>
-<p>首先，我们要明白<strong>缓存</strong>究竟有什么用？
-相比大家都知道<code>HTTP缓存</code>，其核心作用就是<strong>对一些服务端未更新的资源进行复用，避免一些无谓的请求，优化了用户的体验</strong></p>
+<h3 id="2-2继承和封装"><a class="header-anchor" href="#2-2继承和封装">¶</a>2.2继承和封装</h3>
+<h4 id="2-2-1继承"><a class="header-anchor" href="#2-2-1继承">¶</a>2.2.1继承</h4>
+<p>好吧，让我们来看看龚先生的锅的广告词</p>
 <blockquote>
-<p>对于computed也是一样的：</p>
+<p>镶钻日天锅
+这款锅不仅 <strong>继承</strong>了日天锅的金色和钛合金用料还有炒菜功能 ，而且还新增了24课钻石镶嵌于其上，你还在等什么？
+下一款
+钻石日天锅——土豪太太版
+这款产品不仅拥有新功能煮菜，而且还 <strong>继承</strong>了日天锅的金色和钛合金用料还有炒菜功能 和 镶钻日天锅的24颗钻石 ，你还在等什么？</p>
 </blockquote>
-<p>在上面的例子中，<code>methods</code>定义的方法是以<strong>函数调用</strong>的形式来访问的，那么<code>test2-1,test2-2,test2-3</code>是<strong>反复地将<code>methodTest</code>方法运行了三遍</strong>，如果我们碰到一个场景，需要1000个<code>methodTest的返回值</code>，那么毫无疑问，这势必造成大量的<strong>浪费</strong>
-更恐怖的是，如果你更改了message的值，那么这1000个<code>methodTest</code>方法每一个又会重新计算。。。。</p>
-<p>所以，官方文档才反复强调<strong>对于任何复杂逻辑，你都应当使用<code>计算属性</code></strong></p>
-<blockquote>
-<p><strong>computed依赖于data中的数据，只有在它的相关依赖数据发生改变时才会重新求值</strong></p>
-</blockquote>
-<p>如上例，在Vue实例化的时候，computed定义computedTest方法会做一次计算，返回一个值，<strong>在随后的代码编写中，只要<code>computedTest方法</code>依赖的<code>message数据</code>不发生改变，<code>computedTest方法</code>是不会重新计算的</strong>，也就是说<code>test3-1,test3-2</code>是直接拿到了<strong>返回值</strong>，而非是computedTest方法重新计算的结果。</p>
-<p>这样的好处也是显而易见的，同样的，如果我们碰到一个场景，需要1000个<code>computedTest的返回值</code>，那么毫无疑问，这相对于<code>methods</code>而言，将大大地节约内存
-哪怕你改变了message的值，<code>computedTest</code>也只会计算一次而已</p>
-
+<h4 id="2-2-2封装"><a class="header-anchor" href="#2-2-2封装">¶</a>2.2.2封装</h4>
+<p>让我们暂时远离一下龚先生和他该死的锅
+封装的概念其实就是<strong>把一些复杂的东西封装成一个类——把细节隐藏起来</strong>
+什么意思呢？
+比如你拿到一个大补药方，里面让你把当归、人参、枸杞找来，每个两百克在一块儿煮一个时辰【大家别乱试，只是举个例子】，你只要通过你的大补药方，就能造出【实例化】大补药，而无需了解当归、人参、枸杞他们分别有什么作用，如何种植这些本就无需了解的细节
+这就是封装的优势</p>
+<h2 id="3-轻松一刻"><a class="header-anchor" href="#3-轻松一刻">¶</a>3.轻松一刻</h2>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"> // JavaScripter的代码</span><br><span class="line">var bluesbone = &#123;name: &quot;Bruce&quot;&#125;</span><br><span class="line"> // Java程序员说</span><br><span class="line">// 不行！你的图纸呢？bluesbone这个实例怎么直接出来了？</span><br><span class="line"></span><br><span class="line">// 经过Java程序员的修改后</span><br><span class="line">var bluesbone = new Object()</span><br><span class="line">bluesbone.name = &quot;Bruce&quot;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -428,9 +452,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Vue/" rel="tag"># Vue</a>
+            <a href="/tags/面向对象/" rel="tag"># 面向对象</a>
           
-            <a href="/tags/computed/" rel="tag"># computed</a>
+            <a href="/tags/原型/" rel="tag"># 原型</a>
           
         </div>
       
@@ -443,18 +467,14 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/30/e-target和e-currentTarget到底有什么不同/" rel="next" title="e.target和e.currentTarget到底有什么不同">
-                <i class="fa fa-chevron-left"></i> e.target和e.currentTarget到底有什么不同
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/05/02/移动端入门(动态REM —— 手机专用的自适应方案)/" rel="prev" title="移动端入门(动态REM —— 手机专用的自适应方案)">
-                移动端入门(动态REM —— 手机专用的自适应方案) <i class="fa fa-chevron-right"></i>
+              <a href="/2018/04/25/Canvas学习笔记(一)/" rel="prev" title="极速入门Canvas(一)基本图形的绘制">
+                极速入门Canvas(一)基本图形的绘制 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -621,7 +641,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-computed区别于method的两个核心"><span class="nav-number">1.</span> <span class="nav-text">¶1.computed区别于method的两个核心</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-computed的属性调用"><span class="nav-number">2.</span> <span class="nav-text">¶2. computed的属性调用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-computed的缓存功能"><span class="nav-number">3.</span> <span class="nav-text">¶3. computed的缓存功能</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-什么是面向对象"><span class="nav-number">1.</span> <span class="nav-text">¶1.什么是面向对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-面向对象的主要概念浅析"><span class="nav-number">2.</span> <span class="nav-text">¶2.面向对象的主要概念浅析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1类-实例-成员-方法-实例成员-静态类"><span class="nav-number">2.1.</span> <span class="nav-text">¶2.1类/实例/成员/方法/实例成员/静态类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2继承和封装"><span class="nav-number">2.2.</span> <span class="nav-text">¶2.2继承和封装</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-1继承"><span class="nav-number">2.2.1.</span> <span class="nav-text">¶2.2.1继承</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-2封装"><span class="nav-number">2.2.2.</span> <span class="nav-text">¶2.2.2封装</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-轻松一刻"><span class="nav-number">3.</span> <span class="nav-text">¶3.轻松一刻</span></a></li></ol></div>
             
 
           </div>

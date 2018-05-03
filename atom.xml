@@ -228,4 +228,34 @@
     
   </entry>
   
+  <entry>
+    <title>深入浅出面向对象和原型【概念篇1】</title>
+    <link href="http://yoursite.com/2018/02/11/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E5%8E%9F%E5%9E%8B%E3%80%90%E6%A6%82%E5%BF%B5%E7%AF%871%E3%80%91/"/>
+    <id>http://yoursite.com/2018/02/11/深入浅出面向对象和原型【概念篇1】/</id>
+    <published>2018-02-11T02:36:53.000Z</published>
+    <updated>2018-05-03T02:44:33.342Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="1-什么是面向对象"><a class="header-anchor" href="#1-什么是面向对象">¶</a>1.什么是面向对象</h2><p>面向对象是一种思维方式[与语言无关]，教你如何思考代码，</p><blockquote><p>Object Oriented Programming</p></blockquote><p><code>orient</code> 的英文意思 是 <code>使朝向</code>那么，面向对象不如说成是<strong>以对象为基础</strong>的一种编程<strong>思维方式</strong></p><a id="more"></a><h2 id="2-面向对象的主要概念浅析"><a class="header-anchor" href="#2-面向对象的主要概念浅析">¶</a>2.面向对象的主要概念浅析</h2><p>好了，现在让我们进入正题</p><p>面向对象的难点之一就是它有一大堆的概念——类、实例、成员等等，为了让我们更好地理解这些概念，我们从一个故事讲起。</p><hr><ul><li>龚先生是一位在当地非常有名气的厨师，但他对自己用的锅一直不太满意，于是打算自己造一个</li><li>龚先生想好了。他的第一个锅必须要剑走偏锋，于是起名为“日天锅”，并且得是金色的，而且必须要用寒铁制造，方能展现实力</li><li>龚先生风风火火画好了一份设计图纸</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 日天锅</span><br><span class="line">// ---------</span><br><span class="line">// 颜色：金</span><br><span class="line">// 用料：钛合金</span><br><span class="line">// 功能：炒菜()</span><br></pre></td></tr></table></figure><ul><li>日天锅造出来后，龚先生如有神助，手艺直线上升，日天锅的大名就此传开</li><li>某日，一土豪前来，让龚先生为他也定做一款日天锅，不过这次要镶嵌24颗钻石</li><li>龚先生欣然接受，并画好了第二份设计图纸，只是 <strong>在原有的基础上镶嵌了钻石</strong></li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">// 镶钻日天锅</span><br><span class="line">// ---------</span><br><span class="line">// 镶嵌物：钻石</span><br></pre></td></tr></table></figure><ul><li>土豪把镶钻日天锅带回家后，瞬间得到了一众土豪太太和她的闺蜜圈的喜爱，大家纷纷询问能否批量生产，在原有的基础上加上煮菜功能</li><li>龚先生自然不会放过这个赚钱的机会，于是乎画出了第三份图纸， <strong>只是在【镶钻日天锅】原有的基础上增加了新功能</strong></li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">// 镶钻日天锅——土豪太太版</span><br><span class="line">// ---------</span><br><span class="line">// 新功能：煮菜()</span><br></pre></td></tr></table></figure><ul><li>从那以后龚先生再也没有炒过菜，而是专心致志进行着造锅业务，而且大力发展物流业务，努力早日让客户享受到“人在家中坐，锅从天上来”的顶级服务</li><li>完</li></ul><hr><h3 id="2-1类-实例-成员-方法-实例成员-静态类"><a class="header-anchor" href="#2-1类-实例-成员-方法-实例成员-静态类">¶</a>2.1类/实例/成员/方法/实例成员/静态类</h3><p>根据这个故事，我们来解释一下面向对象一些名字非常抽象的概念<sup>_</sup>：</p><ol><li><strong>类</strong>：龚先生的设计图纸就是类【你也可以把类理解成一个constructor[构造器]】</li><li><strong>实例(对象)</strong>：龚先生根据图纸制造出来的锅就是实例【实例其实就是对象，只不过在面向对象中叫做实例】</li><li><strong>成员(属性)</strong>：龚先生的图纸里，例如颜色、用料等，这些被称为成员</li><li><strong>方法(函数)</strong>：龚先生图纸里，例如炒菜()、煮菜()</li><li><strong>实例成员</strong>：也就是实例的属性，比如日天锅的颜色</li><li><strong>静态类</strong>：无法实例化的类，龚先生日后可能会搞出一些奇怪的图纸，这些图纸根本逻辑可能就是错的，以至于根据这个图纸是造不出来锅的</li></ol><h3 id="2-2继承和封装"><a class="header-anchor" href="#2-2继承和封装">¶</a>2.2继承和封装</h3><h4 id="2-2-1继承"><a class="header-anchor" href="#2-2-1继承">¶</a>2.2.1继承</h4><p>好吧，让我们来看看龚先生的锅的广告词</p><blockquote><p>镶钻日天锅这款锅不仅 <strong>继承</strong>了日天锅的金色和钛合金用料还有炒菜功能 ，而且还新增了24课钻石镶嵌于其上，你还在等什么？下一款钻石日天锅——土豪太太版这款产品不仅拥有新功能煮菜，而且还 <strong>继承</strong>了日天锅的金色和钛合金用料还有炒菜功能 和 镶钻日天锅的24颗钻石 ，你还在等什么？</p></blockquote><h4 id="2-2-2封装"><a class="header-anchor" href="#2-2-2封装">¶</a>2.2.2封装</h4><p>让我们暂时远离一下龚先生和他该死的锅封装的概念其实就是<strong>把一些复杂的东西封装成一个类——把细节隐藏起来</strong>什么意思呢？比如你拿到一个大补药方，里面让你把当归、人参、枸杞找来，每个两百克在一块儿煮一个时辰【大家别乱试，只是举个例子】，你只要通过你的大补药方，就能造出【实例化】大补药，而无需了解当归、人参、枸杞他们分别有什么作用，如何种植这些本就无需了解的细节这就是封装的优势</p><h2 id="3-轻松一刻"><a class="header-anchor" href="#3-轻松一刻">¶</a>3.轻松一刻</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"> // JavaScripter的代码</span><br><span class="line">var bluesbone = &#123;name: &quot;Bruce&quot;&#125;</span><br><span class="line"> // Java程序员说</span><br><span class="line">// 不行！你的图纸呢？bluesbone这个实例怎么直接出来了？</span><br><span class="line"></span><br><span class="line">// 经过Java程序员的修改后</span><br><span class="line">var bluesbone = new Object()</span><br><span class="line">bluesbone.name = &quot;Bruce&quot;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;1-什么是面向对象&quot;&gt;&lt;a class=&quot;header-anchor&quot; href=&quot;#1-什么是面向对象&quot;&gt;¶&lt;/a&gt;1.什么是面向对象&lt;/h2&gt;
+&lt;p&gt;面向对象是一种思维方式[与语言无关]，教你如何思考代码，&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Object Oriented Programming&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;code&gt;orient&lt;/code&gt; 的英文意思 是 &lt;code&gt;使朝向&lt;/code&gt;
+那么，面向对象不如说成是&lt;strong&gt;以对象为基础&lt;/strong&gt;的一种编程&lt;strong&gt;思维方式&lt;/strong&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="JS" scheme="http://yoursite.com/categories/JS/"/>
+    
+    
+      <category term="面向对象" scheme="http://yoursite.com/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"/>
+    
+      <category term="原型" scheme="http://yoursite.com/tags/%E5%8E%9F%E5%9E%8B/"/>
+    
+  </entry>
+  
 </feed>
