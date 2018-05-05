@@ -281,6 +281,335 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/05/vue原理之响应式/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="大汪">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://bluesbonewong.github.io/Private_Resume_1/img/head.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="BluesboneW">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/05/vue原理之响应式/" itemprop="url">vue原理之响应式</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-05T16:15:13+08:00">
+                2018-05-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Vue/" itemprop="url" rel="index">
+                    <span itemprop="name">Vue</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="1-什么是响应式"><a class="header-anchor" href="#1-什么是响应式">¶</a>1. 什么是响应式</h2>
+<blockquote>
+<p>拿<code>&lt;input v-model=&quot;xxx&quot;&gt;</code>举例</p>
+</blockquote>
+<ul>
+<li>修改<code>data</code>属性后，vue立刻监听到 —— 修改<code>data</code>里的<code>xxx</code>，dom也会发生相应的变化</li>
+<li><code>data</code>属性被代理到<code>vue实例</code>上 —— 在vue实例内部，调用<code>data</code>里的<code>xxx</code>的方式不是<code>this.data.xxx</code>而是<code>this.xxx</code></li>
+</ul>
+<h2 id="2-vue如何监听到data的变化"><a class="header-anchor" href="#2-vue如何监听到data的变化">¶</a>2. vue如何监听到<code>data</code>的变化</h2>
+<p>vue响应式的核心就在于<code>如何追踪变化</code>，实现这一点的重中之重就在<code>Object.defineProperty()</code></p>
+<p>先来看一个例子</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123;</span><br><span class="line">  b: <span class="number">1</span>,</span><br><span class="line">  c: <span class="number">2</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(obj.b) <span class="comment">// 如何监听到obj.b被调用了呢？</span></span><br><span class="line">obj.c = <span class="number">3</span> <span class="comment">// 如何监听到obj.c被赋值了呢？</span></span><br></pre></td></tr></table></figure>
+<h3 id="2-1-object-defineproperty"><a class="header-anchor" href="#2-1-object-defineproperty">¶</a>2.1 Object.defineProperty()</h3>
+<p>顾名思义，<code>Object.defineProperty()</code>就是用来<strong>定义对象属性的</strong>，结合之前定义对象属性的方式，现在一共有<strong>三种</strong></p>
+<ul>
+<li><code>people[name] = 'zhangsan'</code></li>
+<li><code>people.name = 'zhangsan'</code></li>
+<li><code>Object.defineProperty(people, 'name', {value: 'zhangsan'})</code></li>
+</ul>
+<h3 id="2-2-object-defineproperty-基本语法"><a class="header-anchor" href="#2-2-object-defineproperty-基本语法">¶</a>2.2 Object.defineProperty()基本语法</h3>
+<ul>
+<li><strong>语法：</strong><code>Object.defineProperty(obj, prop, descriptor)</code></li>
+<li><strong>作用：</strong> 1.在一个对象上定义一个新属性;2.修改一个对象的现有属性</li>
+<li><strong>参数：</strong>
+<code>obj</code>：被传入的对象，
+<code>prop</code>：对obj要定义或要修改的<strong>属性名称</strong>【key的名称】，
+<code>descriptor【重点】</code>：对被定义或被修改的<strong>属性的一些规定</strong>【对value的规定】</li>
+<li><strong>返回值：</strong> obj</li>
+</ul>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/05/05/vue原理之响应式/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/04/浅析Vue中computed与method的区别/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="大汪">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://bluesbonewong.github.io/Private_Resume_1/img/head.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="BluesboneW">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/04/浅析Vue中computed与method的区别/" itemprop="url">浅析Vue中computed与method的区别</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-04T16:15:13+08:00">
+                2018-05-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Vue/" itemprop="url" rel="index">
+                    <span itemprop="name">Vue</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <blockquote>
+<p>其实官方文档对这个已经说的很清楚了，笔者不过是在其基础上进行归纳总结，各位看官还是先去<a href="https://cn.vuejs.org/v2/guide/computed.html#%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7%E7%BC%93%E5%AD%98-vs-%E6%96%B9%E6%B3%95" target="_blank" rel="noopener">读一下官方文档</a>吧</p>
+</blockquote>
+<h2 id="1-computed区别于method的两个核心"><a class="header-anchor" href="#1-computed区别于method的两个核心">¶</a>1.computed区别于method的两个核心</h2>
+<p>在官方文档中，强调了computed区别于method最重要的两点</p>
+<ol>
+<li>computed是<strong>属性调用</strong>，而methods是<strong>函数调用</strong></li>
+<li>computed带有<strong>缓存功能</strong>，而methods不是</li>
+</ol>
+<p>OK，下面我们看一个具体的例子</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/05/04/浅析Vue中computed与method的区别/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/02/移动端入门(动态REM —— 手机专用的自适应方案)/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -387,161 +716,6 @@
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/05/02/移动端入门(动态REM —— 手机专用的自适应方案)/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/01/浅析Vue中computed与method的区别/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="大汪">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://bluesbonewong.github.io/Private_Resume_1/img/head.jpeg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="BluesboneW">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/01/浅析Vue中computed与method的区别/" itemprop="url">浅析Vue中computed与method的区别</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-01T22:32:12+08:00">
-                2018-05-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Vue/" itemprop="url" rel="index">
-                    <span itemprop="name">Vue</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <blockquote>
-<p>其实官方文档对这个已经说的很清楚了，笔者不过是在其基础上进行归纳总结，各位看官还是先去<a href="https://cn.vuejs.org/v2/guide/computed.html#%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7%E7%BC%93%E5%AD%98-vs-%E6%96%B9%E6%B3%95" target="_blank" rel="noopener">读一下官方文档</a>吧</p>
-</blockquote>
-<h2 id="1-computed区别于method的两个核心"><a class="header-anchor" href="#1-computed区别于method的两个核心">¶</a>1.computed区别于method的两个核心</h2>
-<p>在官方文档中，强调了computed区别于method最重要的两点</p>
-<ol>
-<li>computed是<strong>属性调用</strong>，而methods是<strong>函数调用</strong></li>
-<li>computed带有<strong>缓存功能</strong>，而methods不是</li>
-</ol>
-<p>OK，下面我们看一个具体的例子</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/05/01/浅析Vue中computed与method的区别/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1066,7 +1240,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/04/26/前端面试每日一题【不断更新中。。。】/" itemprop="url">前端面试每日一题【更新至第六天】</a></h1>
+                <a class="post-title-link" href="/2018/04/26/前端面试每日一题【不断更新中。。。】/" itemprop="url">前端面试每日一题【更新至第八天】</a></h1>
         
 
         <div class="post-meta">
@@ -1691,7 +1865,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
