@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Source Code Pro:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="HTTP," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="¶1. HTTP 状态码知道哪些？  101,200,202,204,301,302,303,304,307,403,404  ¶101 101表示按照其上的头信息变为一个不同的协议 ¶202/204表示什么 202服务器已接受请求，但尚未处理 204服务器已处理请求，但没有返回任何内容 ¶403/404表示什么 403被拒绝 404资源未找到——一般是请求路径出了问题 ¶303和307的区别 3">
+<meta name="keywords" content="HTTP">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTTP相关面试题">
+<meta property="og:url" content="http://yoursite.com/2018/05/09/HTTP相关面试题/index.html">
+<meta property="og:site_name" content="BluesboneW">
+<meta property="og:description" content="¶1. HTTP 状态码知道哪些？  101,200,202,204,301,302,303,304,307,403,404  ¶101 101表示按照其上的头信息变为一个不同的协议 ¶202/204表示什么 202服务器已接受请求，但尚未处理 204服务器已处理请求，但没有返回任何内容 ¶403/404表示什么 403被拒绝 404资源未找到——一般是请求路径出了问题 ¶303和307的区别 3">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-05-09T13:17:25.464Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HTTP相关面试题">
+<meta name="twitter:description" content="¶1. HTTP 状态码知道哪些？  101,200,202,204,301,302,303,304,307,403,404  ¶101 101表示按照其上的头信息变为一个不同的协议 ¶202/204表示什么 202服务器已接受请求，但尚未处理 204服务器已处理请求，但没有返回任何内容 ¶403/404表示什么 403被拒绝 404资源未找到——一般是请求路径出了问题 ¶303和307的区别 3">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/05/09/HTTP相关面试题/"/>
+
+
+
+
+
+  <title>HTTP相关面试题 | BluesboneW</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">BluesboneW</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Have Fun, Please</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/09/HTTP相关面试题/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="大汪">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://bluesbonewong.github.io/Private_Resume_1/img/head.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="BluesboneW">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">HTTP相关面试题</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-09T20:16:23+08:00">
+                2018-05-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/面试题/" itemprop="url" rel="index">
+                    <span itemprop="name">面试题</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="1-http-状态码知道哪些？"><a class="header-anchor" href="#1-http-状态码知道哪些？">¶</a>1. HTTP 状态码知道哪些？</h2>
+<ul>
+<li>101,200,202,204,301,302,303,304,307,403,404</li>
+</ul>
+<h3 id="101"><a class="header-anchor" href="#101">¶</a>101</h3>
+<p><code>101</code>表示按照其上的头信息变为一个不同的协议</p>
+<h3 id="202-204表示什么"><a class="header-anchor" href="#202-204表示什么">¶</a>202/204表示什么</h3>
+<p><code>202</code>服务器已<strong>接受</strong>请求，但尚未处理
+<code>204</code>服务器已<strong>处理</strong>请求，但没有返回任何内容</p>
+<h3 id="403-404表示什么"><a class="header-anchor" href="#403-404表示什么">¶</a>403/404表示什么</h3>
+<p><code>403</code>被拒绝
+<code>404</code>资源未找到——一般是请求路径出了问题</p>
+<h3 id="303和307的区别"><a class="header-anchor" href="#303和307的区别">¶</a>303和307的区别</h3>
+<p>303和307状态码<strong>是对302的细化</strong>，有着相同的功能：<strong>都是临时重定向</strong>，但是303明确表示客户端应当采用get方法获取资源，307则是重新发起post请求</p>
+<h3 id="304表示什么"><a class="header-anchor" href="#304表示什么">¶</a>304表示什么</h3>
+<p>304是指文件未改变，使用http缓存</p>
+<h2 id="2-301-和-302-的区别是什么？"><a class="header-anchor" href="#2-301-和-302-的区别是什么？">¶</a>2. 301 和 302 的区别是什么？</h2>
+<ul>
+<li>301：永久重定向</li>
+<li>302：临时重定向</li>
+</ul>
+<h2 id="3-http-缓存怎么做？"><a class="header-anchor" href="#3-http-缓存怎么做？">¶</a>3. HTTP 缓存怎么做？</h2>
+<ol>
+<li>没有缓存：浏览器会反复向Server请求资源，浪费带宽</li>
+<li>只有缓存：如果Server的资源变了，浏览器无法获取最新资源</li>
+<li>缓存+更新<code>Expires</code>：第一次请求某个资源时，Server -&gt; 浏览器，附带一个额外信息 —— 过期时间，
+如使用Expires，浏览器把这个时间储存在本地，等到下次请求相同资源时，
+将浏览器时间与Expires的时间进行比对，查看是否过期，过期则从服务端拉取最新资源，
+未过期则使用本地缓存
+缺点：不可靠，比如本地时间出现问题，比Server端的时间提前了一年，则还是会反复请求</li>
+<li>升级版缓存+更新<code>Catch-Control</code>：第一次请求资源，服务器返回完整文件与附带信息<code>Catch-Control:max-age=300;</code>
+在时间内300s内的请求，使用缓存，超过这个时间则再次发送网络请求
+可选值：
+1.Public：响应可被任何中间节点缓存
+2.Private：中间节点不允许缓存
+3.no-catch：不使用catch-control做前置验证，而是直接使用Etag或Last-modified字段来控制缓存
+4.no-store：真正的不缓存任何东西，也不使用Etag
+5.max-age
+缺点：以时间控制，万一东西其实一直没有更新，那请求还是浪费的</li>
+<li>终极版缓存+更新<code>Catch-Control + Etag字段</code>：第一次请求，服务器给请求的资源返回一个Etag字段，它是对该资源的编码,
+Catch-Control过期之后，再次请求相同资源，会对Etag字段进行比对<code>在请求头里的if-none-match中</code>，
+相同返回304，不相同则对该资源重新请求
+缺点：如果有多个服务器，请求资源万一是随机发到所有服务器上的，那么Etag都不一样，还是会重新请求</li>
+<li>究极版缓存+更新<code>Catch-Control + Last-Modified/if-Modified-since</code>：第一次请求，服务器给请求的资源返回一个Last-Modified字段,
+记录该资源在Server端的最后修改时间，再次请求该资源会在请求头中带上if-Modified-since，
+记录了上一次请求返回的Last-Modified，Server接收到了请求后，会对它们进行对比，若Server端的Last-Modified更新，
+则响应新资源，否则返回304</li>
+</ol>
+<h2 id="4-cache-control-和-etag-的区别是什么？"><a class="header-anchor" href="#4-cache-control-和-etag-的区别是什么？">¶</a>4. Cache-Control 和 Etag 的区别是什么？</h2>
+<p>第三个问题解释了</p>
+<h2 id="7-get-和-post-的区别是什么？"><a class="header-anchor" href="#7-get-和-post-的区别是什么？">¶</a>7. GET 和 POST 的区别是什么？</h2>
+<ul>
+<li>参数：GET的参数写在请求头中，POST写在请求体中</li>
+<li>参数长度限制GET的长度限制在1024个字节，POST的长度限制在4~10Mb</li>
+<li>功能区别：GET是获取资源</li>
+<li>安全：在http协议下，都不安全，但是相对而言，POST比GET安全，GET的请求信息直接暴露在URL里，post放在了请求体内</li>
+</ul>
+<h2 id="8-怎么跨域？jsonp-是什么？cors-是什么？postmessage-是什么？"><a class="header-anchor" href="#8-怎么跨域？jsonp-是什么？cors-是什么？postmessage-是什么？">¶</a>8. 怎么跨域？JSONP 是什么？CORS 是什么？postMessage 是什么？</h2>
+<ul>
+<li>JSONP是通过 script 标签加载数据的方式去获取数据当做 JS 代码来执行</li>
+<li>CORS设置响应头中的Access-Control-Allow-Origin</li>
+</ul>
+<h2 id="9-tcp-和-udp-的区别是什么"><a class="header-anchor" href="#9-tcp-和-udp-的区别是什么">¶</a>9. TCP 和 UDP 的区别是什么</h2>
+<p>简答：TCP可靠、面向连接、相对 UDP 较慢；
+UDP 不可靠，不面向连接、相对 TCP 较快。</p>
+<h2 id="10-tcp-的三次握手指的是什么"><a class="header-anchor" href="#10-tcp-的三次握手指的是什么">¶</a>10. TCP 的三次握手指的是什么</h2>
+<ol>
+<li>客户端：我要连接你了，可以吗</li>
+<li>服务端：嗯，我准备好了，连接我吧</li>
+<li>客户端：那我连接你咯。</li>
+<li>开始后面步骤</li>
+</ol>
+<h2 id="11-ajax的readystate几种状态"><a class="header-anchor" href="#11-ajax的readystate几种状态">¶</a>11. AJAX的readyState几种状态</h2>
+<p>0	UNSENT	            代理被创建，但尚未调用 open() 方法。
+1	OPENED	            open() 方法已经被调用。
+2	HEADERS_RECEIVED	send() 方法已经被调用，并且头部和状态已经可获得。
+3	LOADING	            下载中； responseText 属性已经包含部分数据。
+4	DONE	            下载操作已完成。</p>
+<h2 id="12-如何对ajax返回的数据进行格式化和标准化"><a class="header-anchor" href="#12-如何对ajax返回的数据进行格式化和标准化">¶</a>12. 如何对AJAX返回的数据进行格式化和标准化</h2>
+<p>使用<code>JSON.parse()</code></p>
+<h2 id="13-说一下dns"><a class="header-anchor" href="#13-说一下dns">¶</a>13. 说一下dns</h2>
+<ul>
+<li><code>domain name system</code>，域名系统</li>
+<li>它作为<strong>将域名和IP地址相互映射</strong>的一个分布式数据库，能够使人更方便地访问互联网</li>
+</ul>
+<h2 id="14-谈一谈性能优化"><a class="header-anchor" href="#14-谈一谈性能优化">¶</a>14. 谈一谈性能优化</h2>
+<h3 id="第一部分：加载的优化"><a class="header-anchor" href="#第一部分：加载的优化">¶</a>第一部分：加载的优化</h3>
+<ul>
+<li><code>网络越快越好</code>：把网站静态资源放在CDN上，服务器网速要好</li>
+<li><code>东西体积越少越好</code>：服务端将资源压缩，前端将资源【特别是图片】压缩</li>
+<li><code>东西数量越少越好</code>：减少请求，比如说把icon变成字体</li>
+<li><code>服务器处理的越快越好</code>：</li>
+<li><code>能重复利用的最好重复利用</code>：比如http的缓存，相同的css、js文件预先加载</li>
+</ul>
+<h3 id="第二部分：体验的优化"><a class="header-anchor" href="#第二部分：体验的优化">¶</a>第二部分：体验的优化</h3>
+<ul>
+<li>只给用户暂时需要的东西</li>
+<li>别让用户感觉卡顿</li>
+<li>动画不要卡</li>
+</ul>
+<h2 id="15-谈一下https"><a class="header-anchor" href="#15-谈一下https">¶</a>15. 谈一下https</h2>
+<h3 id="1-保证数据传输的安全-https"><a class="header-anchor" href="#1-保证数据传输的安全-https">¶</a>1.保证数据传输的安全——https</h3>
+<p>http的请求都不安全</p>
+<h3 id="2-三种加密方式"><a class="header-anchor" href="#2-三种加密方式">¶</a>2.三种加密方式</h3>
+<ul>
+<li>对称加密<code>AES</code>：加密和解密使用同一个秘钥。特点：速度快</li>
+<li>非对称加密<code>RSA</code>：公钥加密的必须用私钥解密，私钥加密的必须用公钥加密。特点：速度慢，cpu开销大</li>
+<li>Hash加密<code>MD5/SHA1</code>：无法反向解密，一般用来验证数据未被修改</li>
+</ul>
+<h3 id="3-https的原理-ca链逐级认证"><a class="header-anchor" href="#3-https的原理-ca链逐级认证">¶</a>3.https的原理 —— CA链逐级认证</h3>
+<ul>
+<li>当一个网站要使用 https 时先需在一些国际认证的 CA 机构填写网站信息申请证书，而这些 CA机构往往还有上层 CA，最终有一个根 CA。</li>
+<li>一般来说浏览器都会内置根 CA 和一些顶级 CA 的证书，但需要验证的时候会通过 CA 链逐级验证。</li>
+</ul>
+<h2 id="16-谈一谈xss攻击"><a class="header-anchor" href="#16-谈一谈xss攻击">¶</a>16. 谈一谈XSS攻击</h2>
+<ol>
+<li>输入框使用了innerHTML，恶意人员输入script标签并且带上了恶意代码</li>
+<li>避免：</li>
+</ol>
+<ul>
+<li>不要使用innerHTML</li>
+<li>对用户的输入进行转义</li>
+</ul>
+<h2 id="17-谈一谈csrf攻击"><a class="header-anchor" href="#17-谈一谈csrf攻击">¶</a>17. 谈一谈CSRF攻击</h2>
+<p>跨站请求伪造<code>Cross Site Request Forgery</code></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/HTTP/" rel="tag"># HTTP</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/05/09/DOM相关面试题/" rel="next" title="DOM相关面试题">
+                <i class="fa fa-chevron-left"></i> DOM相关面试题
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="https://bluesbonewong.github.io/Private_Resume_1/img/head.jpeg"
+                alt="大汪" />
+            
+              <p class="site-author-name" itemprop="name">大汪</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/bluesbonewong" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://space.bilibili.com/24516516/#/" target="_blank" title="Blibli">
+                      
+                        <i class="fa fa-fw fa-globe"></i>Blibli</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                博客其它地址
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://segmentfault.com/u/bluesbonew" title="Segmentfault" target="_blank">Segmentfault</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-http-状态码知道哪些？"><span class="nav-number">1.</span> <span class="nav-text">¶1. HTTP 状态码知道哪些？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#101"><span class="nav-number">1.1.</span> <span class="nav-text">¶101</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#202-204表示什么"><span class="nav-number">1.2.</span> <span class="nav-text">¶202/204表示什么</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#403-404表示什么"><span class="nav-number">1.3.</span> <span class="nav-text">¶403/404表示什么</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#303和307的区别"><span class="nav-number">1.4.</span> <span class="nav-text">¶303和307的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#304表示什么"><span class="nav-number">1.5.</span> <span class="nav-text">¶304表示什么</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-301-和-302-的区别是什么？"><span class="nav-number">2.</span> <span class="nav-text">¶2. 301 和 302 的区别是什么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-http-缓存怎么做？"><span class="nav-number">3.</span> <span class="nav-text">¶3. HTTP 缓存怎么做？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-cache-control-和-etag-的区别是什么？"><span class="nav-number">4.</span> <span class="nav-text">¶4. Cache-Control 和 Etag 的区别是什么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-get-和-post-的区别是什么？"><span class="nav-number">5.</span> <span class="nav-text">¶7. GET 和 POST 的区别是什么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-怎么跨域？jsonp-是什么？cors-是什么？postmessage-是什么？"><span class="nav-number">6.</span> <span class="nav-text">¶8. 怎么跨域？JSONP 是什么？CORS 是什么？postMessage 是什么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-tcp-和-udp-的区别是什么"><span class="nav-number">7.</span> <span class="nav-text">¶9. TCP 和 UDP 的区别是什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-tcp-的三次握手指的是什么"><span class="nav-number">8.</span> <span class="nav-text">¶10. TCP 的三次握手指的是什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-ajax的readystate几种状态"><span class="nav-number">9.</span> <span class="nav-text">¶11. AJAX的readyState几种状态</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#12-如何对ajax返回的数据进行格式化和标准化"><span class="nav-number">10.</span> <span class="nav-text">¶12. 如何对AJAX返回的数据进行格式化和标准化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#13-说一下dns"><span class="nav-number">11.</span> <span class="nav-text">¶13. 说一下dns</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#14-谈一谈性能优化"><span class="nav-number">12.</span> <span class="nav-text">¶14. 谈一谈性能优化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一部分：加载的优化"><span class="nav-number">12.1.</span> <span class="nav-text">¶第一部分：加载的优化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二部分：体验的优化"><span class="nav-number">12.2.</span> <span class="nav-text">¶第二部分：体验的优化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#15-谈一下https"><span class="nav-number">13.</span> <span class="nav-text">¶15. 谈一下https</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-保证数据传输的安全-https"><span class="nav-number">13.1.</span> <span class="nav-text">¶1.保证数据传输的安全——https</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-三种加密方式"><span class="nav-number">13.2.</span> <span class="nav-text">¶2.三种加密方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-https的原理-ca链逐级认证"><span class="nav-number">13.3.</span> <span class="nav-text">¶3.https的原理 —— CA链逐级认证</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#16-谈一谈xss攻击"><span class="nav-number">14.</span> <span class="nav-text">¶16. 谈一谈XSS攻击</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#17-谈一谈csrf攻击"><span class="nav-number">15.</span> <span class="nav-text">¶17. 谈一谈CSRF攻击</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">大汪</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
