@@ -281,6 +281,159 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/09/CSS3相关面试题/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="大汪">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://bluesbonewong.github.io/Private_Resume_1/img/head.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="BluesboneW">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/09/CSS3相关面试题/" itemprop="url">CSS3相关面试题</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-09T17:35:10+08:00">
+                2018-05-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/面试题/" itemprop="url" rel="index">
+                    <span itemprop="name">面试题</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="1-说说盒模型"><a class="header-anchor" href="#1-说说盒模型">¶</a>1. 说说盒模型</h2>
+<ul>
+<li><code>content-box</code>: width === 内容区宽度</li>
+<li><code>border-box</code>: width === 内容区宽度 + padding 宽度 + border 宽度(不管IE，都用border-box)</li>
+</ul>
+<h2 id="2-css-reset-和-normalize-css-有什么区别？"><a class="header-anchor" href="#2-css-reset-和-normalize-css-有什么区别？">¶</a>2. css reset 和 normalize.css 有什么区别？</h2>
+<p>reset 重置，之前的样式我不要，a{color: red;}，抛弃默认样式
+normalize 让所有浏览器的标签都跟标准规定的默认样式一致，各浏览器上的标签默认样式基本统一</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/05/09/CSS3相关面试题/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/09/HTML5相关面试题/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -373,12 +526,11 @@
 
       
         
-          
-          ¶1. Doctype作用？标准模式与兼容模式各有什么区别?
-
-Doctype用来规范浏览器行为，HTML5不需要写&lt;!DOCTYPE HTML&gt;，只需要写&lt;!DOCTYPE&gt;就行，但是HTML4.0需要，否则会导致文档以兼容模式呈现
-标准模式【严格模式】的排版和js运行机制
-          ...
+          <h2 id="1-doctype作用？标准模式与兼容模式各有什么区别"><a class="header-anchor" href="#1-doctype作用？标准模式与兼容模式各有什么区别">¶</a>1. Doctype作用？标准模式与兼容模式各有什么区别?</h2>
+<ul>
+<li>Doctype用来规范浏览器行为，HTML5不需要写<code>&lt;!DOCTYPE HTML&gt;</code>，只需要写&lt;!DOCTYPE&gt;就行，但是HTML4.0需要，否则会导致文档以兼容模式呈现</li>
+<li><code>标准模式【严格模式】</code>的排版和js运行机制都是以<strong>该浏览器支持的最高标准运行</strong>；<code>兼容模式【混杂模式】</code>以<strong>宽松的向后兼容的方式显示</strong></li>
+</ul>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/05/09/HTML5相关面试题/#more" rel="contents">
@@ -524,14 +676,11 @@ Doctype用来规范浏览器行为，HTML5不需要写&lt;!DOCTYPE HTML&gt;，�
 
       
         
-          
-          
-我把所有的代码+注释都放在github了，源码链接，预览链接
-
-¶1. 核心想法
-使用vuex进行兄弟组件通信的核心思路就是将vuex作为一个store(vuex被设计的原因之一)，将每个子组件的数据都存放进去，每个子组件都从vuex里获取数据，其实就是一句话——把vuex作为一个桥
-¶2. 具体
-          ...
+          <blockquote>
+<p>我把所有的代码+注释都放在github了，<a href="https://github.com/bluesbonewong/vuex-brother-component-tutorial/tree/master/vuex-bro-tutorial" target="_blank" rel="noopener">源码链接</a>，<a href="https://bluesbonewong.github.io/vuex-brother-component-tutorial/vuex-bro-tutorial/dist/index.html" target="_blank" rel="noopener">预览链接</a></p>
+</blockquote>
+<h2 id="1-核心想法"><a class="header-anchor" href="#1-核心想法">¶</a>1. 核心想法</h2>
+<p>使用vuex进行兄弟组件通信的核心思路就是将<code>vuex</code>作为一个<code>store</code>(vuex被设计的原因之一)，将每个子组件的数据都存放进去，每个子组件都从vuex里获取数据，其实就是一句话——<strong>把vuex作为一个<code>桥</code></strong></p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/05/09/使用vuex进行兄弟组件通信/#more" rel="contents">
@@ -1665,160 +1814,6 @@ Doctype用来规范浏览器行为，HTML5不需要写&lt;!DOCTYPE HTML&gt;，�
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/29/移动端入门(响应式)/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="大汪">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://bluesbonewong.github.io/Private_Resume_1/img/head.jpeg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="BluesboneW">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/29/移动端入门(响应式)/" itemprop="url">移动端入门(响应式)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-29T20:26:39+08:00">
-                2018-04-29
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/移动端/" itemprop="url" rel="index">
-                    <span itemprop="name">移动端</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1>1.媒体查询</h1>
-<h2 id="1-1什么是媒体"><a class="header-anchor" href="#1-1什么是媒体">¶</a>1.1什么是媒体</h2>
-<p>这个概念非常重要
-<strong>纸张</strong>，<strong>电脑</strong>，<strong>iPad</strong>，<strong>手机</strong>都是媒体，我们通过媒体查询可以获知用户在什么设备，从而写出针对性的css</p>
-<h2 id="1-2具体用法"><a class="header-anchor" href="#1-2具体用法">¶</a>1.2具体用法</h2>
-<blockquote>
-<p>基础用法</p>
-</blockquote>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">media</span> (min-width: <span class="number">800px</span>) &#123;</span><br><span class="line">  <span class="comment">/*如果某个媒体满足宽度800px之上，那么css如下*/</span></span><br><span class="line">  <span class="selector-tag">body</span> &#123;</span><br><span class="line">      <span class="attribute">background</span>: <span class="number">#fdf</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@<span class="keyword">media</span> (min-width: <span class="number">600px</span>) and (max-width: <span class="number">800px</span>) &#123;</span><br><span class="line">  <span class="comment">/*如果某个媒体满足宽度在600-800px之间，那么css如下*/</span></span><br><span class="line">  <span class="selector-tag">body</span> &#123;</span><br><span class="line">      <span class="attribute">background</span>: red;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@<span class="keyword">media</span> (min-width: <span class="number">400px</span>)and (max-width: <span class="number">600px</span>) &#123;</span><br><span class="line">  <span class="comment">/*如果某个媒体满足宽度在400-600px之间，那么css如下*/</span></span><br><span class="line">  <span class="selector-tag">body</span> &#123;</span><br><span class="line">      <span class="attribute">background</span>: orange;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@<span class="keyword">media</span> (max-width: <span class="number">400px</span>) &#123;</span><br><span class="line">  <span class="comment">/*如果某个媒体满足宽度在0-400px之间，那么css如下*/</span></span><br><span class="line">  <span class="selector-tag">body</span> &#123;</span><br><span class="line">      <span class="attribute">background</span>: black;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/04/29/移动端入门(响应式)/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1873,7 +1868,7 @@ Doctype用来规范浏览器行为，HTML5不需要写&lt;!DOCTYPE HTML&gt;，�
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1895,7 +1890,7 @@ Doctype用来规范浏览器行为，HTML5不需要写&lt;!DOCTYPE HTML&gt;，�
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

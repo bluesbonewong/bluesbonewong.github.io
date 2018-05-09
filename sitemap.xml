@@ -2,9 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2018/05/09/CSS3%E7%9B%B8%E5%85%B3%E9%9D%A2%E8%AF%95%E9%A2%98/</loc>
+    
+    <lastmod>2018-05-09T10:25:43.123Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2018/05/09/%E4%BD%BF%E7%94%A8vuex%E8%BF%9B%E8%A1%8C%E5%85%84%E5%BC%9F%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1/</loc>
+    
+    <lastmod>2018-05-09T09:56:45.343Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2018/05/09/HTML5%E7%9B%B8%E5%85%B3%E9%9D%A2%E8%AF%95%E9%A2%98/</loc>
     
-    <lastmod>2018-05-09T09:22:22.928Z</lastmod>
+    <lastmod>2018-05-09T09:56:45.336Z</lastmod>
     
   </url>
   
@@ -12,13 +26,6 @@
     <loc>http://yoursite.com/2018/04/25/Canvas%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80)/</loc>
     
     <lastmod>2018-05-09T07:10:02.139Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2018/05/09/%E4%BD%BF%E7%94%A8vuex%E8%BF%9B%E8%A1%8C%E5%85%84%E5%BC%9F%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1/</loc>
-    
-    <lastmod>2018-05-09T03:52:52.480Z</lastmod>
     
   </url>
   
